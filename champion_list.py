@@ -10,7 +10,7 @@ def main():
     # Setup riotapi
     riotapi.set_region("NA")
     riotapi.print_calls(True)
-    riotapi.set_api_key("RGAPI-869b62dc-7fcc-4be6-91d8-26716e777a1a")
+    riotapi.set_api_key("")
     riotapi.set_load_policy(LoadPolicy.lazy)
 
     champions = riotapi.get_champions()
