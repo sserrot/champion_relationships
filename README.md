@@ -16,10 +16,11 @@ Tools Used:
 ***Important Files***
 
 champions.csv - contains information about champions (name, faction, rivals, and friends) in a .csv file.
+
 champions.json - same information in JSON.
 
 champion_list.py - Uses [Riot API](https://developer.riotgames.com/) to extract a formatted, ordered, list of all champions.
 
 tutorial/spiders/champions_spider.py - Scrapy Spider that crawls Riot website for champion information not in the Riot API.
 
-champion_relationships isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.
+champion_relationships isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends Â© Riot Games, Inc.
