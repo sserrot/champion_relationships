@@ -8,9 +8,10 @@ from cassiopeia.type.core.common import LoadPolicy
 
 def main():
     # Setup riotapi
+    key = os.environ.get('DEV_KEY')
     riotapi.set_region("NA")
     riotapi.print_calls(True)
-    riotapi.set_api_key("RGAPI-869b62dc-7fcc-4be6-91d8-26716e777a1a")
+    riotapi.set_api_key(key)
     riotapi.set_load_policy(LoadPolicy.lazy)
 
     champions = riotapi.get_champions()
@@ -22,7 +23,7 @@ def main():
 
     champ_list = [champion.replace('.', '') for champion in champ_list]
 
-    champ_list = [champion.replace('', '') for champion in champ_list]
+    champ_list = [champion.replace('\'', '') for champion in champ_list]
 
     champ_list = [champion.lower() for champion in champ_list]
     
