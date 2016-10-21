@@ -1,0 +1,39 @@
+---
+title: "League Champion Relationships"
+author: "Santiago Torres"
+date: "October 21, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+setwd("C:\\Users\\TORRES_SANT\\Documents\\Programming\\webscrapping\\champion_relationships")
+champ_relations = read.csv("champions.csv")
+library(ggplot2)
+library(igraph)
+```
+
+## Exploring The Data
+
+Lets take a look at the data we got in our newly created .csv file.
+
+
+```{r}
+
+head(champ_relations)
+
+str(champ_relations)
+
+summary(champ_relations)
+
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

@@ -2,7 +2,6 @@ import os
 from cassiopeia import riotapi
 from cassiopeia.type.core.common import LoadPolicy
 
-# to do - iterate through champions (remove spaces first) and link up with the webcrawler champions_spider.py
 # https://github.com/meraki-analytics/cassiopeia/blob/master/examples/champion_id_to_name_mapping.py
 
 

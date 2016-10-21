@@ -67,4 +67,4 @@ class ChampionsSpider(scrapy.Spider):
             "rivals": rivals
         }
 
-# scrapy crawl quotes -o quotes.csv to get a csv file
+# scrapy crawl champions -o champions.csv to get a csv file
