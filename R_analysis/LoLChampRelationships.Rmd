@@ -62,6 +62,11 @@ since JSON stores multiple friends in one pair with their respective champion, w
 Edges are also more complex because we have to store the champion with its edge
 
 ```{r}
+```
+
+Here is the data for friends
+
+```{r}
 head(newchamp_relations$friends)
 # note the pair in [[2]]
 # we have to create a better loop
@@ -102,6 +107,42 @@ head(edgeList)
 #awesome, it works
 ```
 
+Lets add the attributes for the faction of champions
+
+```{r}
+# place holder for Faction attributes from : http://www.shizukalab.com/toolkits/sna/plotting-networks-pt-2
+#import the sample_attributes
+i = 1
+f = 1
+b=1
+
+edgeFactionList <- c() #empty edge for loop
+edgeFactionListCol2 <- c()
+
+while(i <= numChampions) {
+  #champName
+  champName = newchamp_relations$champion_name[[i]]
+  numFactions = length(newchamp_relations$faction[[i]])
+  while (numFactions > 0 && b <= numFriends){
+    if (newchamp_relations$faction[[b]][f] !="")
+      {
+      edgeFactionList = c(edgeFactionList,tolower(champName))
+      edgeFactionListCol2 = c(edgeFactionListCol2, tolower(newchamp_relations$faction[[i]][f]))
+    }
+    b = b + 1
+    }
+  f = 1
+  i = i +1
+  }
+#a=read.csv(file.choose())
+g = graph_from_data_frame(d=dfEdge, vertices = dfVertex, directed = T)
+V(g)$Faction = as.character(newchamp_relations$faction[match(V(g)$name, newchamp_relations$name)])
+#V(net)$Sex=as.character(a$Sex[match(V(net)$name,a$Bird.ID)]) # This code says to create a vertex attribute called "Sex" by extracting the value of the column "Sex" in the attributes file when the Bird ID number matches the vertex name.
+V(g)$Faction
+#V(net)$Sex # This will print the new vertex attribute, "Sex"
+# and you will get:
+#[1] "F" "M" "M" "F" "F" "M" "M"
+```
 # Seeing the graph
 ## Default apparance
 The easiest way to do so is to just run the `plot` function on the graph.  This will not look very good, because we haven't customized anything about the graph's appearance yet.  But let's see how it looks.
@@ -115,8 +156,14 @@ This is very ugly so let's try and fix it up.
 
 ```{r}
 V(g)$size <- 5
-V(g)$label.cex <- 0.5
-plot(g)
+V(g)$label.cex <- .5
+V(g)$label.dist <- 0
+E(g)$arrow.size <- 0.5
+E(g)$arrow.width <- .25
+V(g)$
+l = layout.fruchterman.reingold
+V(g)$raster <- c(vertexNames, lapply(img))
+plot(g, layout=l, vertex.shape = "raster")
 ```
 
 
@@ -124,23 +171,40 @@ plot(g)
 #testing images
 aa = 1
 img <- list()
+imgname <- list()
 for (x in vertexNames){
   imgname = c(imgname, paste(x, ".png", sep =""))
   imgfilename <- file.path(path_to_files, imgname)
 }
 while (aa <= length(vertexNames)) {
     img[[aa]] <- readPNG(imgfilename[aa])
+    aa = aa + 1
 }
-layout(matrix(1:length(vertexNames),nr=4,byr=T))
-for (j in 1:length(vertexNames)) plot(img[[j]])
 
-img2filename <- file.path("C:/Users/TORRES_SANT/Documents/Programming/webscrapping/champion_relationships/R_analysis","wukong.png")
-
+img2filename <- file.path("C:/Users/TORRES_SANT/Documents/Programming/webscrapping/champion_relationships/R_analysis","aatrox.png")
+ 
 imgtest <- readPNG(img2filename)
 
+L <- layout.fruchterman.reingold(g, niter=10000)
+L[,1]=(L[,1]-min(L[,1]))/(max(L[,1])-min(L[,1]))*2-1
+L[,2]=(L[,2]-min(L[,2]))/(max(L[,2])-min(L[,2]))*2-1
+
+plot(g, layout = l)
+
+apply(L,1,function(x)rasterImage(imgtest,x[1]-0.1,x[2]-0.1,x[1]+0.1,x[2]+0.1))
+
+
+# V(g)$raster <- replicate(vcount(g), imgtest, simplify=FALSE)
+# for(i in 1:nrow(L)) {  
+#   rasterImage(img[[i]], l[i, 1]-0.2, l[i, 2]-0.2, l[i, 1]+0.2, l[i, 2]+0.2)
+# }
+```
+
+```{r}
 g <- graph.ring(10)
 # This is a complex attribute, so supply a list here
 V(g)$raster <- replicate(vcount(g), imgtest, simplify=FALSE)
 plot(g, vertex.shape="raster", vertex.label=NA,vertex.size=1:10*5, vertex.size2=1:10*5)
 ```
+
     
