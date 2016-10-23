@@ -1,0 +1,146 @@
+---
+title: "League Champion Relationships"
+author: "Santiago Torres"
+date: "October 21, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+#attempting to make this as abstract as possible for reuse.
+library(png)
+library(igraph)
+library(jsonlite)
+champ_relations = fromJSON("champions.json")
+path_to_files = "C:/Users/TORRES_SANT/Documents/Programming/webscrapping/champion_relationships/R_analysis"
+```
+
+## Exploring The Data
+
+Lets take a look at the data we got in our newly created .json file.
+
+
+```{r}
+#how long is this? how many champions
+numChampions <- nrow(champ_relations)
+numChampions
+
+#what are the column names?
+colnames(champ_relations)
+
+# i dont like the order so lets change it up
+
+newchamp_relations <- champ_relations[,c(2,3,1,4)]
+
+head(newchamp_relations)
+
+# lets try create a vector of all the champions
+
+testVertexNames <- as.vector(newchamp_relations$champion_name)
+head(testVertexNames)
+
+#this weird format is due to the JSON data
+
+#lets just iterate through the champion names to store the vertexNames
+vertexNames <- c()
+
+for (champ in newchamp_relations$champion_name){
+  vertexNames = c(vertexNames,tolower(champ))
+}
+
+length(vertexNames) #should be 133
+length(vertexNames) == numChampions
+head(vertexNames)
+
+#However, it turns out there is a relationship with a non champion!, Kled has a friend Skarl which appears in the data
+vertexNames = c(vertexNames, "skaarl")
+
+```
+
+
+in order to add our edges of friends, we have to iterate through it again
+since JSON stores multiple friends in one pair with their respective champion, we cannot use the same iteration
+Edges are also more complex because we have to store the champion with its edge
+
+```{r}
+head(newchamp_relations$friends)
+# note the pair in [[2]]
+# we have to create a better loop
+# so we have to create an instance of the champion for each friend connection it has
+#get champion
+
+#the original data 
+edgeList <- c() #empty edge for loop
+edgeListCol2 <- c()
+
+i = 1
+f = 1
+
+while(i <= numChampions) {
+  #champName
+  champName = newchamp_relations$champion_name[[i]]
+  #how many friends?
+  numFriends = length(newchamp_relations$friends[[i]])
+  
+  while (numFriends > 0 && f <= numFriends){
+    if (newchamp_relations$friends[[i]][f] !="")
+      {
+      edgeList = c(edgeList,tolower(champName))
+      edgeListCol2 = c(edgeListCol2, tolower(newchamp_relations$friends[[i]][f]))
+    }
+    f = f + 1
+    }
+  f = 1
+  i = i +1
+  }
+dfEdge = as.data.frame(edgeList, stringsAsFactors=FALSE)
+dfEdge["target"] = edgeListCol2
+
+dfVertex = as.data.frame(vertexNames, stringsAsFactors=FALSE)
+dfVertex["ID"] = vertexNames
+head(edgeList)
+
+#awesome, it works
+```
+
+# Seeing the graph
+## Default apparance
+The easiest way to do so is to just run the `plot` function on the graph.  This will not look very good, because we haven't customized anything about the graph's appearance yet.  But let's see how it looks.
+
+```{r}
+g = graph_from_data_frame(d=dfEdge, vertices = dfVertex, directed = T)
+plot(g)
+```
+
+This is very ugly so let's try and fix it up.
+
+```{r}
+V(g)$size <- 5
+V(g)$label.cex <- 0.5
+plot(g)
+```
+
+
+```{r}
+#testing images
+aa = 1
+img <- list()
+for (x in vertexNames){
+  imgname = c(imgname, paste(x, ".png", sep =""))
+  imgfilename <- file.path(path_to_files, imgname)
+}
+while (aa <= length(vertexNames)) {
+    img[[aa]] <- readPNG(imgfilename[aa])
+}
+layout(matrix(1:length(vertexNames),nr=4,byr=T))
+for (j in 1:length(vertexNames)) plot(img[[j]])
+
+img2filename <- file.path("C:/Users/TORRES_SANT/Documents/Programming/webscrapping/champion_relationships/R_analysis","wukong.png")
+
+imgtest <- readPNG(img2filename)
+
+g <- graph.ring(10)
+# This is a complex attribute, so supply a list here
+V(g)$raster <- replicate(vcount(g), imgtest, simplify=FALSE)
+plot(g, vertex.shape="raster", vertex.label=NA,vertex.size=1:10*5, vertex.size2=1:10*5)
+```
+    
