@@ -19,7 +19,7 @@ champions.csv - contains information about champions (name, faction, rivals, and
 
 champions.json - same information in JSON.
 
-champion_list.py - Uses [Riot API](https://developer.riotgames.com/) to extract a formatted, ordered, list of all champions.
+champion_list.py - Uses [Riot API](https://developer.riotgames.com/) to extract a formatted and ordered list of all champions.
 
 tutorial/spiders/champions_spider.py - Scrapy Spider that crawls Riot website for champion information not in the Riot API.
 
