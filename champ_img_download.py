@@ -12,7 +12,7 @@ champs = champion_list.main()
 
 # Download the file from `url` and save it locally under `file_name`:
 
-save_path = 'C:\\Users\\TORRES_SANT\\Documents\\Programming\\webscrapping\\champion_relationships\\img_downloader\\img'
+save_path = 'C:\\Users\\TORRES_SANT\\Documents\\Programming\\webscrapping\\champion_relationships\\R_analysis\\img'
 
 for c in champs:
     url = base + c.title() + '.png'

@@ -4,19 +4,70 @@ author: "Santiago Torres"
 date: "October 21, 2016"
 output: html_document
 ---
-
 ```{r setup, include=FALSE}
 library(png)
 library(igraph)
 library(jsonlite)
-library(dplyr)
-champ_relations = fromJSON("champions.json")
-path_to_files = "C:/Users/TORRES_SANT/Documents/Programming/webscrapping/champion_relationships/R_analysis/img"
+path_to_files = "C:/Users/TORRES_SANT/Documents/Programming/webscrapping/champion_relationships/img_downloader/img"
 ```
 
-## Exploring The Data
+# Introduction
+
+Give an interpretation of the results of each computation.
+
+Direct the reader's attention to the features you want them to observe in each plot.
+
+If your plots and comptuations allow you to draw any conclusions about your data, do so.
+
+Perform at least one computation.
+
+We discussed some network and vertex measures in class on 10/17, but there are others documented in the igraph manual.
+Furthermore, you can do other computations in R using any of the code you've learned to write earlier in our course.
+
+***For instance, you might compute the betweenness centrality of your vertices, if the interpretation of that measure discussed in class on 10/17 is relevant to your network.***
+
+***Provide a clear write-up of all the (non-boring) things you did on this project.***
+
+***How did you plan and execute the data gathering?***
+
+***What difficulties (if any) arose when you tried to represent your data clearly as a graph?***
+
+  images, json files
+  
+***What computation did you do and why do you think its results mean?***
+
+***Why are they informative or interesting for your network?***
+
+
+## How I got my data
+
+I chose to use Riot Games: League of Legends Champion relationships as the Social Network for the project.
+
+I did not want to spend a couple hours going through the champion pages and grabbing the relationships, so I wrote a webscrapping script in Python that queries the Riot API for a list of all the champions and then scrapes all the champion relationship information from the relevant url.
+
+All of this data was then downloaded into a JSON file similar to this format:
+
+  {
+  
+    Champion_name:
+    
+    Faction:
+  
+    Rivals:
+  
+    Friends:
+  
+  }
+
+Feel free to take a look at my [champion_relationships](https://github.com/sserrot/champion_relationships) repository on GitHub for more information on that process.
 
 ### Lets take a look at the data we got in our newly created .json file.
+
+I use the `jsonlite` package to read the champions.json file into a dataframe of lists
+
+```{r}
+champ_relations = fromJSON("champions.json")
+```
 
 #### Number of Champions
 
@@ -30,51 +81,83 @@ numChampions
 colnames(champ_relations)
 ```
 
-I dont like the order so lets change it up.
+I changed the order of the columns to better represent the data.
 
 ```{r}
 newchamp_relations <- champ_relations[,c(2,3,1,4)]
+```
 
+Here's a brief look at the data
+
+```{r}
 head(newchamp_relations)
 ```
+
+Here is the first problem I encountered in the dataset:
+
+  a. Working with *JSON*
 
 ```{r}
 # lets try create a vector of all the champions
 testVertexNames <- as.vector(newchamp_relations$champion_name)
 head(testVertexNames)
-# this weird format is due to the JSON data
-# lets just iterate through the champion names to store the vertexNames
+```
+
+As you can see, the information is embedded into the lists in the dataframe, so we have to iterate through it to get the information. 
+
+# Creating the graph requirements
+
+## Vertex creation
+
+### Vertex names
+
+```{r}
 vertexNames <- c()
 
 for (champ in newchamp_relations$champion_name){
   vertexNames = c(vertexNames,tolower(champ))
 }
 ```
-```{r}
-# lets take a look at the names
-head(vertexNames)
 
-#However, it turns out there is a relationship with a non champion!, Kled has a friend Skarl which appears in the data
+Here is the summary of the new information, properly represented.
+
+```{r}
+head(vertexNames)
+```
+
+I ran into another error later in the process where `igraph` would refuse to connect the relationships I create later.
+
+It turns out that while I collected all the champion relationship data, there is a champion that has a relationship with a nonchampion.
+
+Here is the code where I added its name.
+
+```{r}
 vertexNames = c(vertexNames, "skaarl")
 ```
 
-In order to add our edges of friends, we have to iterate through it again
-since JSON stores multiple friends in one pair with their respective champion, we cannot use the same iteration
-Edges are also more complex because we have to store the champion with its edge
 
-Here is the data for friends
+## Creating Connections/Edges
 
-## Creating the graph
+### Friends edges creation
 
-### Vertex creation / Nodes
+Now we should store the relationships, or edges, in order to graph our Social Network.
+
+In order to add our edges of friends, we have to iterate through the dataframe again, storing the friends information.
+
+Here is a brief look at the dataframe:
 
 ```{r}
 head(newchamp_relations$friends)
-# note the pair in [[2]]
-# we have to create a better loop
-# so we have to create an instance of the champion for each friend connection it has
+```
 
-#the original data 
+since JSON stores multiple friends in one pair with their respective champion, we cannot use the same iteration method we used for the vertex names.
+
+Edges are also more complex because we have to store the champion with its edge so there must be a Source list and a Target list. 
+
+
+Here is the code for the friends edges
+
+```{r}
 edgeFriendsSource <- c() #empty edge for loop
 edgeFriendsTarget <- c()
 
@@ -82,13 +165,11 @@ i = 1
 f = 1
 
 while(i <= numChampions) {
-  #champName
   champName = newchamp_relations$champion_name[[i]]
-  #how many friends?
   numFriends = length(newchamp_relations$friends[[i]])
   
   while (numFriends > 0 && f <= numFriends){
-    if (newchamp_relations$friends[[i]][f] !="")
+    if (newchamp_relations$friends[[i]][f] != "")
       {
       edgeFriendsSource = c(edgeFriendsSource,tolower(champName))
       edgeFriendsTarget = c(edgeFriendsTarget, tolower(newchamp_relations$friends[[i]][f]))
@@ -100,43 +181,60 @@ while(i <= numChampions) {
 }
 ```
 
+Lets check to make sure it worked
+
 ```{r}
 head(edgeFriendsSource)
 head(edgeFriendsTarget)
 ```
 
-## Create Vertex Attributes
+### Create Faction Attributes
 
-Lets create the attributes for the faction of champions
+Lets create the attributes for the faction of champions.
+
+This is to make the graph slightly more interesting so we can see if relationships are clustered by faction.
+
+The code for this is very similar to the friends edges code. (I've hard coded the 134 for now)
 
 ```{r}
 i = 1
 f = 1
-edgeFactionSource <- c() #empty edge for loop
+edgeFactionSource <- c()
 edgeFactionTarget <- c()
+
 while(i <= numChampions) {
-  #champName
-  numFactions = length(newchamp_relations$faction[i])
   for (faction in newchamp_relations$faction){
-    if (f < 134) {
-    if (newchamp_relations$faction[[f]] !="" && f < 134)
-    {
-      champName = newchamp_relations$champion_name[[f]] #133
-      edgeFactionSource = c(edgeFactionSource, tolower(champName))
-      edgeFactionTarget = c(edgeFactionTarget, newchamp_relations$faction[[f]])
-    }
-    f = f + 1
+    if (f <= (numChampions)) {
+      if (newchamp_relations$faction[[f]] !="" && f <= (numChampions)) # we have to check Skaarl who has no faction
+      {
+        champName = newchamp_relations$champion_name[[f]] #133
+        edgeFactionSource = c(edgeFactionSource, tolower(champName))
+        edgeFactionTarget = c(edgeFactionTarget, newchamp_relations$faction[[f]])
+      }
+      f = f + 1
     }
   }
   i = i+1
 }
+```
+
+And here is the result
+
+```{r}
 head(edgeFactionSource)
 head(edgeFactionTarget)
 ```
 
-## Creating Connections/Edges
+### Rivals edges creation
+Lets create the rival connections for the graph.
 
-Lets create the rival connections for the graph
+There was another error thrown later in the graphing due to improper champion naming.
+
+That is fixed by the last line where I replace `monkeyking` with `wukong`
+
+You'll notice it is only one list instead of two like the others.
+This is because `friends` and `factions` will be dataframes, but `rivals` must be a list in order to use
+`add_edges` later in the graphing process.
 
 ```{r}
 edgeRivals <- c() #empty edge for loop
@@ -145,9 +243,9 @@ i = 1
 f = 1
 
 while(i <= numChampions) {
-  #champName
+  
   champName = newchamp_relations$champion_name[[i]]
-  #how many rivals?
+  
   numRivals = length(newchamp_relations$rivals[[i]])
   
   while (numRivals > 0 && f <= numRivals){
@@ -165,6 +263,8 @@ edgeRivals[276] = "wukong" # it was labeled as monkeyking, which threw errors in
 
 ## Graphing the data
 
+Here are all the global variables for the graphing portion
+
 ```{r}
 # globals
 vertexSize <- 7
@@ -175,7 +275,6 @@ vLabelFont <- 2 # bold text
 vLabelDegree = -pi/2
 eArrowSize <- 1
 eArrowWidth<- .7
-l <- layout.fruchterman.reingold
 ```
 
 Graph of both
@@ -191,38 +290,20 @@ dfVertex["ID"] = vertexNames
 both = graph_from_data_frame(d=dfEdge, vertices = dfVertex, directed = T)
 E(both)$color <- "darkgreen" # green for friends
 both <- add_edges(both, edgeRivals, attr=list(color="red")) #red for enemies
-
-both_layout <- layout.fruchterman.reingold(both, niter=10000)
-
-plot(both, layout = both_layout)
-
-#awesome, it works
 ```
 
 Here we add factions to the graph
 
 ```{r}
-# add factions
-
 V(both)$Faction = as.character(edgeFactionTarget[match(V(both)$name, edgeFactionSource)])
 head(V(both)$Faction)
 allFactions = unique(V(both)$Faction)
 factionColors <- c('red',NA,'lightblue','blue','brown','gold','lawngreen','orange',NA,'purple', 'black','darkgreen','darkgray','ivory','darkblue',NA,NA,NA,NA,NA)
-
 # add a key for colors
 factionNumber <- function ( faction ) {
   match( faction, allFactions )}
-
 V(both)$color <- factionColors[factionNumber(V(both)$Faction)]
 ```
-
-graph both
-
-```{r}
-plot(both, layout = both_layout)
-```
-
-This is very ugly so let's try and fix it up.
 
 ```{r}
 V(both)$size <- vertexSize
@@ -234,8 +315,9 @@ V(both)$label.degree = vLabelDegree
 E(both)$arrow.size <- eArrowSize
 E(both)$arrow.width <- eArrowWidth
 
-plot(both, layout=both_layout, asp = 0, frame = TRUE, main = "Champion Relationships")
+both_layout <- layout.fruchterman.reingold(both, niter=500)
 
+plot(both, layout=both_layout, asp = 0, frame = TRUE, main = "Champion Relationships")
 ```
 
 Friends graph
@@ -244,8 +326,6 @@ friends <- graph_from_data_frame(d=dfEdge, vertices = dfVertex, direct = T)
 
 E(friends)$color <- "darkgreen" # green for friends
 V(friends)$Faction = as.character(edgeFactionTarget[match(V(friends)$name, edgeFactionSource)])
-
-#Factions added!
 
 allFactions = unique(V(friends)$Faction)
 factionColors <- c('red',NA,'lightblue','blue','brown','gold','lawngreen','orange',NA,'purple', 'black','darkgreen','darkgray','ivory','darkblue',NA,NA,NA,NA,NA)
@@ -260,13 +340,12 @@ V(friends)$label.degree = vLabelDegree
 E(friends)$arrow.size <- eArrowSize
 E(friends)$arrow.width <- eArrowWidth
 
-#pdf("friends.pdf",10,10) #saves graph as a pdf
-
 plot(friends, frame = TRUE, main = "Champion Friendships")
 
-# legend(x=-1.5, y=-1.1, c("Newspaper","Television", "Online News"), pch=21,
-# 
-#        col="#777777", pt.bg=colrs, pt.cex=2, cex=.8, bty="n", ncol=1)
+legend(x=-1.5, y=-1.1, allFactions, pch=21,
+        col="#777777", pt.bg="blue", pt.cex=2, cex=.8, bty="n", ncol=1)
+legend('topleft',legend= allFactions,col='black',pch=21, pt.bg='orange')
+
 ```
 
 
@@ -294,6 +373,7 @@ V(rivals)$label.degree = vLabelDegree
 E(rivals)$arrow.size <- eArrowSize
 E(rivals)$arrow.width <- eArrowWidth
 
+l = layout_with_fr(rivals)
 plot(rivals, layout=l, asp = 0, frame = TRUE, main = "Champion Rivals")
 ```
 
@@ -377,6 +457,8 @@ both[[index_of_most]]
 #### Eigenvector Centrality, most influential vertex
 
 ```{r}
+set.seed(2)
+#errorszzzzzzzzz randomlly
 influential <- max(evcent(rivals)$vector)
 index_of_influential <- match(influential, evcent(rivals)$vector)
 print(index_of_influential)
@@ -414,10 +496,12 @@ for (x in 1:134)
 set.seed(1)
 # arrows point to x is friends with
 
-l <- layout.norm(layout.fruchterman.reingold(friends, niter = 500, coolexp = .6))
+#l <- layout.norm(layout.fruchterman.reingold(friends, niter = 500))
+l <- layout.norm(layout_with_fr(friends, niter = 500, start.temp = 20 ))
 
 V(friends)$label.cex <- .01
-V(friends)$size <- .008
+V(friends)$size <- .01
+V(friends)$shape <- "square"
 E(friends)$arrow.size <- 1.25
 #E(friends)$arrow.width <- 1
 
@@ -433,13 +517,15 @@ for(i in 1:nrow(l)) {
 ```{r fig.width= 18, fig.height= 18}
 set.seed(1)
 # arrows point to x is friends with
-l <- layout.norm(layout.fruchterman.reingold(rivals, niter = 500, coolexp = .6))
+l <- layout.norm(layout.fruchterman.reingold(rivals, niter = 500))
 
 
 V(rivals)$label.cex <- .01
 V(rivals)$size <- .008
 E(rivals)$arrow.size <- 1.25
 E(rivals)$arrow.width <- .5
+V(rivals)$size <- .01
+V(rivals)$shape <- "square"
 
 plot(rivals, layout = l, frame = TRUE, main = "Champion Relationships")
 
@@ -454,13 +540,14 @@ for(i in 1:nrow(l)) {
 set.seed(1)
 # arrows point to x is friends with
 
-l <- layout.norm(layout.fruchterman.reingold(both, niter = 500, coolexp = .6))
-
+l <- layout.norm(layout.fruchterman.reingold(both, niter = 500))
 
 V(both)$label.cex <- .01
 V(both)$size <- .008
 E(both)$arrow.size <- 1.25
 E(both)$arrow.width <- 1
+V(both)$size <- 6
+V(both)$shape <- "square"
 
 plot(both, layout = l, frame = TRUE, main = "Champion Relationships")
 
