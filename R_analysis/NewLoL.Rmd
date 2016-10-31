@@ -8,7 +8,7 @@ output: html_document
 library(png)
 library(igraph)
 library(jsonlite)
-path_to_files = "C:/Users/TORRES_SANT/Documents/Programming/webscrapping/champion_relationships/img_downloader/img"
+path_to_files = "C:/Users/TORRES_SANT/Documents/Programming/webscrapping/champion_relationships/R_analysis/img"
 ```
 
 # Introduction
@@ -298,7 +298,9 @@ Here we add factions to the graph
 V(both)$Faction = as.character(edgeFactionTarget[match(V(both)$name, edgeFactionSource)])
 head(V(both)$Faction)
 allFactions = unique(V(both)$Faction)
-factionColors <- c('red',NA,'lightblue','blue','brown','gold','lawngreen','orange',NA,'purple', 'black','darkgreen','darkgray','ivory','darkblue',NA,NA,NA,NA,NA)
+allFactions
+factionColors <- c('#FF0000',NA,'#66FFFF','#000099','#993300','#FFCC00','#00FF00','#FF9900','#666633','#993366', '#000000','#006600','#999966','#FF3399','#800000','#9966FF','#FF0066','#FF99FF','#0066FF','#333300')
+# factionColors <- c('#FF0000',NA,'lightblue','blue','brown','gold','lawngreen','orange',NA,'purple', 'black','darkgreen','darkgray','ivory','darkblue',NA,NA,NA,NA,NA)
 # add a key for colors
 factionNumber <- function ( faction ) {
   match( faction, allFactions )}
@@ -328,7 +330,6 @@ E(friends)$color <- "darkgreen" # green for friends
 V(friends)$Faction = as.character(edgeFactionTarget[match(V(friends)$name, edgeFactionSource)])
 
 allFactions = unique(V(friends)$Faction)
-factionColors <- c('red',NA,'lightblue','blue','brown','gold','lawngreen','orange',NA,'purple', 'black','darkgreen','darkgray','ivory','darkblue',NA,NA,NA,NA,NA)
 
 V(friends)$color <- factionColors[factionNumber(V(friends)$Faction)]
 V(friends)$size <- vertexSize
@@ -342,9 +343,12 @@ E(friends)$arrow.width <- eArrowWidth
 
 plot(friends, frame = TRUE, main = "Champion Friendships")
 
-legend(x=-1.5, y=-1.1, allFactions, pch=21,
-        col="#777777", pt.bg="blue", pt.cex=2, cex=.8, bty="n", ncol=1)
-legend('topleft',legend= allFactions,col='black',pch=21, pt.bg='orange')
+legendAllFactions = allFactions
+legendAllFactions[2] = "NONE"
+
+# legend(x=-1.5, y=-1.1, allFactions, pch=21,
+#         col="#777777", pt.bg="blue", pt.cex=2, cex=.8, bty="n", ncol=1)
+legend('topleft',legend= legendAllFactions,col='black',pch=25, pt.bg=factionColors)
 
 ```
 
@@ -361,7 +365,6 @@ V(rivals)$Faction = as.character(edgeFactionTarget[match(V(rivals)$name, edgeFac
 #Factions added!
 
 allFactions = unique(V(rivals)$Faction)
-factionColors <- c('red',NA,'lightblue','blue','brown','gold','lawngreen','orange',NA,'purple', 'black','darkgreen','darkgray','ivory','darkblue',NA,NA,NA,NA,NA)
 
 V(rivals)$color <- factionColors[factionNumber(V(rivals)$Faction)]
 V(rivals)$size <- vertexSize
@@ -378,14 +381,6 @@ plot(rivals, layout=l, asp = 0, frame = TRUE, main = "Champion Rivals")
 ```
 
 ## Graph Calculations
-
-### Centrality
-```{r}
-centr_degree(rivals)$centralization
-centr_clo(rivals, mode = "all")$centralization
-head(centr_betw(rivals)$res)
-centr_eigen(rivals)$centralization
-```
 
 #### Betweenness
 
@@ -457,34 +452,32 @@ both[[index_of_most]]
 #### Eigenvector Centrality, most influential vertex
 
 ```{r}
-set.seed(2)
-#errorszzzzzzzzz randomlly
-influential <- max(evcent(rivals)$vector)
-index_of_influential <- match(influential, evcent(rivals)$vector)
-print(index_of_influential)
-rivals[[index_of_influential]]
-#kled most rivals
-
-influential <- max(evcent(friends)$vector)
-index_of_influential <- match(influential, evcent(friends)$vector)
-print(index_of_influential)
-friends[[index_of_influential]]
-#ivern friends (3)
-
-most <- max(evcent(both)$vector)
-index_of_influential <- match(influential, evcent(both)$vector)
-print(index_of_influential)
-both[[index_of_influential]]
-#kled again
+# set.seed(2)
+# #errorszzzzzzzzz randomlly
+# influential <- max(evcent(rivals)$vector)
+# index_of_influential <- match(influential, evcent(rivals)$vector)
+# print(index_of_influential)
+# rivals[[index_of_influential]]
+# #kled most rivals
+# 
+# influential <- max(evcent(friends)$vector)
+# index_of_influential <- match(influential, evcent(friends)$vector)
+# print(index_of_influential)
+# friends[[index_of_influential]]
+# #ivern friends (3)
+# 
+# most <- max(evcent(both)$vector)
+# index_of_influential <- match(influential, evcent(both)$vector)
+# print(index_of_influential)
+# both[[index_of_influential]]
+# #kled again
 ```
-
 
 
 #### Images in Graph
 ```{r}
 imgname <- list()
 imgfilename <- list()
-  
 for (x in 1:134)
     {
     imgname = c(imgname, paste(vertexNames[x], ".png", sep =""))
@@ -492,27 +485,8 @@ for (x in 1:134)
     }
 ```
 
-```{r fig.width= 18, fig.height= 18}
-set.seed(1)
-# arrows point to x is friends with
 
-#l <- layout.norm(layout.fruchterman.reingold(friends, niter = 500))
-l <- layout.norm(layout_with_fr(friends, niter = 500, start.temp = 20 ))
-
-V(friends)$label.cex <- .01
-V(friends)$size <- .01
-V(friends)$shape <- "square"
-E(friends)$arrow.size <- 1.25
-#E(friends)$arrow.width <- 1
-
-plot(friends, layout = l, frame = TRUE, main = "Champion Relationships")
-
-img <- lapply(imgfilename, png::readPNG)
-
-for(i in 1:nrow(l)) {  
-  rasterImage(img[[i]], l[i, 1]-0.02, l[i, 2]-0.02, l[i, 1]+0.02, l[i, 2]+0.02)
-}
-```
+Rivals Image Graph
 
 ```{r fig.width= 18, fig.height= 18}
 set.seed(1)
@@ -521,7 +495,6 @@ l <- layout.norm(layout.fruchterman.reingold(rivals, niter = 500))
 
 
 V(rivals)$label.cex <- .01
-V(rivals)$size <- .008
 E(rivals)$arrow.size <- 1.25
 E(rivals)$arrow.width <- .5
 V(rivals)$size <- .01
@@ -534,11 +507,14 @@ img <- lapply(imgfilename, png::readPNG)
 for(i in 1:nrow(l)) {  
   rasterImage(img[[i]], l[i, 1]-0.02, l[i, 2]-0.02, l[i, 1]+0.02, l[i, 2]+0.02)
 }
+
+legend('topleft',legend= legendAllFactions,pch=22, pt.cex = 3, pt.bg=factionColors, ncol = 2)
 ```
+
+Both Image Graph
 
 ```{r fig.width= 18, fig.height= 18}
 set.seed(1)
-# arrows point to x is friends with
 
 l <- layout.norm(layout.fruchterman.reingold(both, niter = 500))
 
@@ -546,7 +522,7 @@ V(both)$label.cex <- .01
 V(both)$size <- .008
 E(both)$arrow.size <- 1.25
 E(both)$arrow.width <- 1
-V(both)$size <- 6
+V(both)$size <- 4.75
 V(both)$shape <- "square"
 
 plot(both, layout = l, frame = TRUE, main = "Champion Relationships")
@@ -556,4 +532,84 @@ img <- lapply(imgfilename, png::readPNG)
 for(i in 1:nrow(l)) {  
   rasterImage(img[[i]], l[i, 1]-0.02, l[i, 2]-0.02, l[i, 1]+0.02, l[i, 2]+0.02)
 }
+
+legend('topleft',legend= legendAllFactions,pch=22, pt.cex = 4, pt.bg=factionColors, ncol = 2)
+```
+
+Friends Image Graph
+
+```{r fig.width= 18, fig.height= 18}
+set.seed(1)
+# arrows point to x is friends with
+l <- layout.norm(layout_with_fr(friends, niter = 500, start.temp = 20 ))
+
+V(friends)$label.cex <- .01
+V(friends)$size <- 4.75
+V(friends)$shape <- "square"
+E(friends)$arrow.size <- 1.25
+
+plot(friends, layout = l, frame = TRUE, main = "Champion Relationships")
+
+img <- lapply(imgfilename, png::readPNG)
+
+for(i in 1:nrow(l)) {  
+  rasterImage(img[[i]], l[i, 1]-0.02, l[i, 2]-0.02, l[i, 1]+0.02, l[i, 2]+0.02)
+}
+
+legend('topleft',legend= legendAllFactions,pch=22, pt.cex = 5, pt.bg=factionColors, ncol = 2)
+```
+
+```{r fig.width= 18, fig.height= 18}
+set.seed(1)
+# arrows point to x is friends with
+
+rnk = rivals - "kled"
+
+l <- layout.norm(layout.fruchterman.reingold(rnk, niter = 500))
+
+
+V(rnk)$label.cex <- .01
+E(rnk)$arrow.size <- 1.25
+E(rnk)$arrow.width <- .5
+V(rnk)$size <- 4.75
+V(rnk)$shape <- "square"
+
+plot(rnk, layout = l, frame = TRUE, main = "Champion Relationships")
+
+# get rid of kled image
+path_to_kled = paste(path_to_files,"kled.png",sep="/")
+imgfilename[match(path_to_kled, imgfilename)] <- NULL
+
+img <- lapply(imgfilename, png::readPNG)
+
+for(i in 1:nrow(l)) {  
+  rasterImage(img[[i]], l[i, 1]-0.02, l[i, 2]-0.02, l[i, 1]+0.02, l[i, 2]+0.02)
+}
+
+legend('topleft',legend= legendAllFactions,pch=22, pt.cex = 3, pt.bg=factionColors, ncol = 2)
+```
+Here we remove kled from the graph to see what it would look like
+```{r fig.width=18, fig.height=18}
+set.seed(1)
+
+bnk = both - "kled"
+
+l <- layout.norm(layout.fruchterman.reingold(bnk, niter = 500, start.temp = 20))
+
+V(bnk)$label.cex <- .001
+E(bnk)$arrow.size <- 1.25
+E(bnk)$arrow.width <- 1
+V(bnk)$size <- 4.75
+V(bnk)$shape <- "square"
+
+plot(bnk, layout = l, frame = TRUE, main = "Champion Relationships")
+
+
+img <- lapply(imgfilename, png::readPNG)
+
+for(i in 1:nrow(l)) {
+  rasterImage(img[[i]], l[i, 1]-0.02, l[i, 2]-0.02, l[i, 1]+0.02, l[i, 2]+0.02)
+}
+ 
+legend('topleft',legend= legendAllFactions,pch=22, pt.cex = 4, pt.bg=factionColors, ncol = 2)
 ```
