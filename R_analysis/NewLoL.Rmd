@@ -611,5 +611,13 @@ for(i in 1:nrow(l)) {
   rasterImage(img[[i]], l[i, 1]-0.02, l[i, 2]-0.02, l[i, 1]+0.02, l[i, 2]+0.02)
 }
  
-legend('topleft',legend= legendAllFactions,pch=22, pt.cex = 4, pt.bg=factionColors, ncol = 2)
+#legend('topleft',legend= legendAllFactions,pch=22, pt.cex = 4, pt.bg=factionColors, ncol = 2)
+legend("topleft", text.width=c(.07),
+       inset = c(0, -.06), bty = "n", x.intersp=.3,
+       xjust=0, yjust=0,
+       legend= legendAllFactions,
+       pt.bg=factionColors,
+       ncol = 3,
+       pch=22, pt.cex = 3,
+       cex = 1.1, xpd = TRUE)
 ```
