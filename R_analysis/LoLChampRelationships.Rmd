@@ -10,14 +10,11 @@ library(png)
 library(igraph)
 library(jsonlite)
 library(dplyr)
-champ_relations = fromJSON("champions.json")
-path_to_files = "C:/Users/TORRES_SANT/Documents/Programming/webscrapping/champion_relationships/R_analysis/img"
+champ_relations <- fromJSON("champions_new.json")
+path_to_files <- "C:/Users/Santi/OneDrive/Documents/GitHub/champion_relationships/R_analysis/img"
 ```
-
 ## Exploring The Data
-
 ### Lets take a look at the data we got in our newly created .json file.
-
 #### Number of Champions
 
 ```{r}
@@ -29,33 +26,22 @@ numChampions
 ```{r}
 colnames(champ_relations)
 ```
-
-I dont like the order so lets change it up.
-
-```{r}
-newchamp_relations <- champ_relations[,c(2,3,1,4)]
-
-head(newchamp_relations)
-```
+Read in vectors
 
 ```{r}
 # lets try create a vector of all the champions
-testVertexNames <- as.vector(newchamp_relations$champion_name)
+testVertexNames <- as.vector(champ_relations$champion_name)
 head(testVertexNames)
 # this weird format is due to the JSON data
 # lets just iterate through the champion names to store the vertexNames
 vertexNames <- c()
 
-for (champ in newchamp_relations$champion_name){
-  vertexNames = c(vertexNames,tolower(champ))
-}
+for (champ in champ_relations$champion_name){
+  vertexNames <- c(vertexNames,tolower(champ))}
 ```
 ```{r}
 # lets take a look at the names
 head(vertexNames)
-
-#However, it turns out there is a relationship with a non champion!, Kled has a friend Skarl which appears in the data
-vertexNames = c(vertexNames, "skaarl")
 ```
 
 In order to add our edges of friends, we have to iterate through it again
@@ -69,7 +55,7 @@ Here is the data for friends
 ### Vertex creation / Nodes
 
 ```{r}
-head(newchamp_relations$friends)
+head(champ_relations$related)
 # note the pair in [[2]]
 # we have to create a better loop
 # so we have to create an instance of the champion for each friend connection it has
@@ -78,25 +64,24 @@ head(newchamp_relations$friends)
 edgeFriendsSource <- c() #empty edge for loop
 edgeFriendsTarget <- c()
 
-i = 1
-f = 1
+i <- 1
+f <- 1
 
 while(i <= numChampions) {
   #champName
-  champName = newchamp_relations$champion_name[[i]]
+  champName <- champ_relations$champion_name[[i]]
   #how many friends?
-  numFriends = length(newchamp_relations$friends[[i]])
-  
+  numFriends <- length(champ_relations$related[[i]])
   while (numFriends > 0 && f <= numFriends){
-    if (newchamp_relations$friends[[i]][f] !="")
+    if (champ_relations$related[[i]][f] !="")
       {
-      edgeFriendsSource = c(edgeFriendsSource,tolower(champName))
-      edgeFriendsTarget = c(edgeFriendsTarget, tolower(newchamp_relations$friends[[i]][f]))
+      edgeFriendsSource <- c(edgeFriendsSource,tolower(champName))
+      edgeFriendsTarget <- c(edgeFriendsTarget,tolower(champ_relations$related[[i]][f]))
     }
-    f = f + 1
+    f <- f + 1
     }
-  f = 1
-  i = i +1
+  f <- 1
+  i <- i +1
 }
 ```
 
@@ -110,59 +95,31 @@ head(edgeFriendsTarget)
 Lets create the attributes for the faction of champions
 
 ```{r}
-i = 1
-f = 1
+i <- 1
+f <- 1
 edgeFactionSource <- c() #empty edge for loop
 edgeFactionTarget <- c()
 while(i <= numChampions) {
   #champName
-  numFactions = length(newchamp_relations$faction[i])
-  for (faction in newchamp_relations$faction){
-    if (f < 134) {
-    if (newchamp_relations$faction[[f]] !="" && f < 134)
+  numFactions <- length(champ_relations$region[i])
+  for (faction in champ_relations$region){
+    if (f < 151) {
+    if (champ_relations$region[[f]] !="" && f < 151)
     {
-      champName = newchamp_relations$champion_name[[f]] #133
-      edgeFactionSource = c(edgeFactionSource, tolower(champName))
-      edgeFactionTarget = c(edgeFactionTarget, newchamp_relations$faction[[f]])
+      champName <- champ_relations$champion_name[[f]] #133
+      edgeFactionSource <- c(edgeFactionSource, tolower(champName))
+      edgeFactionTarget <- c(edgeFactionTarget, champ_relations$region[[f]])
     }
-    f = f + 1
+    f <- f + 1
     }
   }
-  i = i+1
+  i <- i+1
 }
 head(edgeFactionSource)
 head(edgeFactionTarget)
 ```
 
 ## Creating Connections/Edges
-
-Lets create the rival connections for the graph
-
-```{r}
-edgeRivals <- c() #empty edge for loop
-
-i = 1
-f = 1
-
-while(i <= numChampions) {
-  #champName
-  champName = newchamp_relations$champion_name[[i]]
-  #how many rivals?
-  numRivals = length(newchamp_relations$rivals[[i]])
-  
-  while (numRivals > 0 && f <= numRivals){
-    if (newchamp_relations$rivals[[i]][f] !="")
-      {
-      edgeRivals = c(edgeRivals,tolower(champName), tolower(newchamp_relations$rivals[[i]][f]))
-    }
-    f = f + 1
-    }
-  f = 1
-  i = i +1
-}
-edgeRivals[276] = "wukong" # it was labeled as monkeyking, which threw errors in the graph
-```
-
 ## Graphing the data
 
 ```{r}
@@ -181,16 +138,16 @@ l <- layout.fruchterman.reingold
 Graph of both
 
 ```{r}
-dfEdge = as.data.frame(edgeFriendsSource, stringsAsFactors=FALSE)
-dfEdge["friendsTarget"] = edgeFriendsTarget
+dfEdge <- as.data.frame(edgeFriendsSource, stringsAsFactors=FALSE)
+dfEdge["friendsTarget"] <- edgeFriendsTarget
 
 # vertex dataframe
-dfVertex = as.data.frame(vertexNames, stringsAsFactors=FALSE)
-dfVertex["ID"] = vertexNames
+dfVertex <- as.data.frame(vertexNames, stringsAsFactors=FALSE)
+dfVertex["ID"] <- vertexNames
 
-both = graph_from_data_frame(d=dfEdge, vertices = dfVertex, directed = T)
+both <- graph_from_data_frame(d=dfEdge, vertices = dfVertex, directed = T)
 E(both)$color <- "darkgreen" # green for friends
-both <- add_edges(both, edgeRivals, attr=list(color="red")) #red for enemies
+#both <- add_edges(both, edgefriends, attr=list(color="red")) #red for enemies
 
 both_layout <- layout.fruchterman.reingold(both, niter=10000)
 
@@ -268,53 +225,24 @@ plot(friends, frame = TRUE, main = "Champion Friendships")
 # 
 #        col="#777777", pt.bg=colrs, pt.cex=2, cex=.8, bty="n", ncol=1)
 ```
-
-
-Rivals graph
-```{r fig.width= 18, fig.height= 18}
-
-rivals <- make_empty_graph() + vertices ( vertexNames)
-
-rivals <- add_edges(rivals, edgeRivals, attr=list(color="red")) #red for enemies
-E(rivals)$color <- "darkred" # red for rivals
-V(rivals)$Faction = as.character(edgeFactionTarget[match(V(rivals)$name, edgeFactionSource)])
-
-#Factions added!
-
-allFactions = unique(V(rivals)$Faction)
-factionColors <- c('red',NA,'lightblue','blue','brown','gold','lawngreen','orange',NA,'purple', 'black','darkgreen','darkgray','ivory','darkblue',NA,NA,NA,NA,NA)
-
-V(rivals)$color <- factionColors[factionNumber(V(rivals)$Faction)]
-V(rivals)$size <- vertexSize
-V(rivals)$label.cex <- vLabelSize
-V(rivals)$label.dist <- vLabelDist
-V(rivals)$label.color <- vLabelColor
-V(rivals)$label.font <- vLabelFont
-V(rivals)$label.degree = vLabelDegree
-E(rivals)$arrow.size <- eArrowSize
-E(rivals)$arrow.width <- eArrowWidth
-
-plot(rivals, layout=l, asp = 0, frame = TRUE, main = "Champion Rivals")
-```
-
 ## Graph Calculations
 
 ### Centrality
 ```{r}
-centr_degree(rivals)$centralization
-centr_clo(rivals, mode = "all")$centralization
-head(centr_betw(rivals)$res)
-centr_eigen(rivals)$centralization
+centr_degree(friends)$centralization
+centr_clo(friends, mode = "all")$centralization
+head(centr_betw(friends)$res)
+centr_eigen(friends)$centralization
 ```
 
 #### Betweenness
 
 ```{r}
-highest <- max(betweenness(rivals))
-index_of_highest <- match(highest, betweenness(rivals))
+highest <- max(betweenness(friends))
+index_of_highest <- match(highest, betweenness(friends))
 print(index_of_highest)
-rivals[[index_of_highest]]
-#darius is the point of highest connection between all rivals
+friends[[index_of_highest]]
+#darius is the point of highest connection between all friends
 
 highest <- max(betweenness(friends))
 index_of_highest <- match(highest, betweenness(friends))
@@ -329,14 +257,14 @@ both[[index_of_highest]]
 #garen again
 ```
 
-#### Closeness Least Friends, Rivals, Both
+#### Closeness Least Friends, friends, Both
 
 ```{r}
-closest <- min(closeness(rivals))
-index_of_closest <- match(closest, closeness(rivals))
+closest <- min(closeness(friends))
+index_of_closest <- match(closest, closeness(friends))
 print(index_of_closest)
-rivals[[index_of_closest]]
-#aurelionsol rivals
+friends[[index_of_closest]]
+#aurelionsol friends
 
 closest <- min(closeness(friends))
 index_of_closest <- match(closest, closeness(friends))
@@ -351,14 +279,14 @@ both[[index_of_closest]]
 #aurelionsol again
 ```
 
-#### Closeness Most Friends, Rivals, Both
+#### Closeness Most Friends, friends, Both
 
 ```{r}
-most <- max(closeness(rivals))
-index_of_most <- match(most, closeness(rivals))
+most <- max(closeness(friends))
+index_of_most <- match(most, closeness(friends))
 print(index_of_most)
-rivals[[index_of_most]]
-#kled most rivals
+friends[[index_of_most]]
+#kled most friends
 
 most <- max(closeness(friends))
 index_of_most <- match(most, closeness(friends))
@@ -377,11 +305,11 @@ both[[index_of_most]]
 #### Eigenvector Centrality, most influential vertex
 
 ```{r}
-influential <- max(evcent(rivals)$vector)
-index_of_influential <- match(influential, evcent(rivals)$vector)
+influential <- max(evcent(friends)$vector)
+index_of_influential <- match(influential, evcent(friends)$vector)
 print(index_of_influential)
-rivals[[index_of_influential]]
-#kled most rivals
+#friends[[index_of_influential]]
+#kled most friends
 
 influential <- max(evcent(friends)$vector)
 index_of_influential <- match(influential, evcent(friends)$vector)
@@ -392,7 +320,7 @@ friends[[index_of_influential]]
 most <- max(evcent(both)$vector)
 index_of_influential <- match(influential, evcent(both)$vector)
 print(index_of_influential)
-both[[index_of_influential]]
+#both[[index_of_influential]]
 #kled again
 ```
 
@@ -403,7 +331,7 @@ both[[index_of_influential]]
 imgname <- list()
 imgfilename <- list()
   
-for (x in 1:134)
+for (x in 1:151)
     {
     imgname = c(imgname, paste(vertexNames[x], ".png", sep =""))
     imgfilename <- c(imgfilename, file.path(path_to_files,imgname[[x]]))
@@ -433,15 +361,15 @@ for(i in 1:nrow(l)) {
 ```{r fig.width= 18, fig.height= 18}
 set.seed(1)
 # arrows point to x is friends with
-l <- layout.norm(layout.fruchterman.reingold(rivals, niter = 500, coolexp = .6))
+l <- layout.norm(layout.fruchterman.reingold(friends, niter = 500, coolexp = .6))
 
 
-V(rivals)$label.cex <- .01
-V(rivals)$size <- .008
-E(rivals)$arrow.size <- 1.25
-E(rivals)$arrow.width <- .5
+V(friends)$label.cex <- .01
+V(friends)$size <- .008
+E(friends)$arrow.size <- 1.25
+E(friends)$arrow.width <- .5
 
-plot(rivals, layout = l, frame = TRUE, main = "Champion Relationships")
+plot(friends, layout = l, frame = TRUE, main = "Champion Relationships")
 
 img <- lapply(imgfilename, png::readPNG)
 

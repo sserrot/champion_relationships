@@ -3,7 +3,8 @@ import champion_list
 from bs4 import BeautifulSoup
 import re
 
-base = 'http://gameinfo.na.leagueoflegends.com/en/game-info/champions/'
+base = 'https://universe.leagueoflegends.com/en_US/champion/'
+#'https://universe.leagueoflegends.com/en_US/champion/aatrox/'
 
 
 class ChampionsSpider(scrapy.Spider):
@@ -14,8 +15,7 @@ class ChampionsSpider(scrapy.Spider):
     full_url = [base + c + '/' for c in champs]
 
     # add wukong
-
-    full_url.append('http://gameinfo.na.leagueoflegends.com/en/game-info/champions/monkeyking/')  #  rito why?
+    full_url.append('https://universe.leagueoflegends.com/en_US/champion/monkeyking/')  #  rito why?
 
     start_urls = full_url
 

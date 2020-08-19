@@ -3,7 +3,7 @@ import shutil
 import champion_list
 import os
 
-base = 'https://ddragon.leagueoflegends.com/cdn/6.20.1/img/champion/'
+base = 'https://ddragon.leagueoflegends.com/cdn/10.16.1/img/champion/' #can just get this from the API -> Champion.image.url -> https://ddragon.leagueoflegends.com/cdn/10.16.1/img/champion/Aatrox.png
 
 champs = champion_list.main()
 
@@ -12,7 +12,7 @@ champs = champion_list.main()
 
 # Download the file from `url` and save it locally under `file_name`:
 
-save_path = 'C:\\Users\\TORRES_SANT\\Documents\\Programming\\webscrapping\\champion_relationships\\R_analysis\\img'
+save_path = 'C:\\Users\\Santi\\OneDrive\\Documents\\GitHub\\champion_relationships\\R_analysis\\img'
 
 for c in champs:
     url = base + c.title() + '.png'
