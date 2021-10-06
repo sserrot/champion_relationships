@@ -3,12 +3,15 @@ title: "League Champion Relationships"
 author: "Santiago Torres"
 date: "October 21, 2016"
 output: html_document
+
 ---
 ```{r setup, include=FALSE}
 library(png)
 library(igraph)
 library(jsonlite)
-path_to_files = "C:/Users/TORRES_SANT/Documents/Programming/webscrapping/champion_relationships/R_analysis/img"
+library(stringr)
+working_directory = getwd()
+path_to_files = str_c(working_directory,"/img")
 ```
 
 # Introduction
@@ -17,7 +20,7 @@ Give an interpretation of the results of each computation.
 
 Direct the reader's attention to the features you want them to observe in each plot.
 
-If your plots and comptuations allow you to draw any conclusions about your data, do so.
+If your plots and computations allow you to draw any conclusions about your data, do so.
 
 Perform at least one computation.
 
