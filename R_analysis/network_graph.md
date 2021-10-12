@@ -13,32 +13,6 @@ output:
 
 # Introduction
 
-Give an interpretation of the results of each computation.
-
-Direct the reader's attention to the features you want them to observe in each plot.
-
-If your plots and computations allow you to draw any conclusions about your data, do so.
-
-Perform at least one computation.
-
-We discussed some network and vertex measures in class on 10/17, but there are others documented in the igraph manual.
-Furthermore, you can do other computations in R using any of the code you've learned to write earlier in our course.
-
-***For instance, you might compute the betweenness centrality of your vertices, if the interpretation of that measure discussed in class on 10/17 is relevant to your network.***
-
-***Provide a clear write-up of all the (non-boring) things you did on this project.***
-
-***How did you plan and execute the data gathering?***
-
-***What difficulties (if any) arose when you tried to represent your data clearly as a graph?***
-
-  images, json files
-  
-***What computation did you do and why do you think its results mean?***
-
-***Why are they informative or interesting for your network?***
-
-
 ## How I got my data
 
 I chose to use Riot Games: League of Legends Champion relationships as the Social Network for the project.
@@ -512,230 +486,44 @@ friends[[index_of_highest]]
 
 ```
 ## $garen
-## + 3/134 vertices, named, from 9078bde:
+## + 3/134 vertices, named, from dfef83e:
 ## [1] jarvaniv lux      xinzhao
 ```
 
 ```r
 #garen between friends
-
-highest <- max(betweenness(both)) 
-index_of_highest <- match(highest, betweenness(both)) 
-print(index_of_highest) 
 ```
 
-```
-## [1] 32
-```
-
-```r
-both[[index_of_highest]] 
-```
-
-```
-## $garen
-## + 6/134 vertices, named, from 906f278:
-## [1] jarvaniv katarina lux      swain    urgot    xinzhao
-```
-
-```r
-#garen again
-```
-
-#### Closeness Least Friends, Rivals, Both
-
-
-```r
-closest <- min(closeness(friends))
-```
-
-```
-## Warning in closeness(friends): At centrality.c:2784 :closeness centrality is not
-## well-defined for disconnected graphs
-```
-
-```r
-index_of_closest <- match(closest, closeness(friends))
-```
-
-```
-## Warning in closeness(friends): At centrality.c:2784 :closeness centrality is not
-## well-defined for disconnected graphs
-```
-
-```r
-print(index_of_closest) 
-```
-
-```
-## [1] 1
-```
-
-```r
-friends[[index_of_closest]] 
-```
-
-```
-## $aatrox
-## + 0/134 vertices, named, from 9078bde:
-```
-
-```r
-#aatrox friends
-
-closest <- min(closeness(both)) 
-```
-
-```
-## Warning in closeness(both): At centrality.c:2784 :closeness centrality is not
-## well-defined for disconnected graphs
-```
-
-```r
-index_of_closest <- match(closest, closeness(both)) 
-```
-
-```
-## Warning in closeness(both): At centrality.c:2784 :closeness centrality is not
-## well-defined for disconnected graphs
-```
-
-```r
-print(index_of_closest) 
-```
-
-```
-## [1] 2
-```
-
-```r
-both[[index_of_closest]] 
-```
-
-```
-## $aurelionsol
-## + 0/134 vertices, named, from 906f278:
-```
-
-```r
-#aurelionsol again
-```
-
-#### Closeness Most Friends, Rivals, Both
-
-
-```r
-most <- max(closeness(friends))
-```
-
-```
-## Warning in closeness(friends): At centrality.c:2784 :closeness centrality is not
-## well-defined for disconnected graphs
-```
-
-```r
-index_of_most <- match(most, closeness(friends))
-```
-
-```
-## Warning in closeness(friends): At centrality.c:2784 :closeness centrality is not
-## well-defined for disconnected graphs
-```
-
-```r
-print(index_of_most) 
-```
-
-```
-## [1] 40
-```
-
-```r
-friends[[index_of_most]] 
-```
-
-```
-## $ivern
-## + 3/134 vertices, named, from 9078bde:
-## [1] bard   lulu   maokai
-```
-
-```r
-#ivern friends (3)
-
-most <- max(closeness(both)) 
-```
-
-```
-## Warning in closeness(both): At centrality.c:2784 :closeness centrality is not
-## well-defined for disconnected graphs
-```
-
-```r
-index_of_most <- match(most, closeness(both)) 
-```
-
-```
-## Warning in closeness(both): At centrality.c:2784 :closeness centrality is not
-## well-defined for disconnected graphs
-```
-
-```r
-print(index_of_most) 
-```
-
-```
-## [1] 55
-```
-
-```r
-both[[index_of_most]] 
-```
-
-```
-## $kled
-## + 134/134 vertices, named, from 906f278:
-##   [1] aatrox       aurelionsol  anivia       akali        ashe        
-##   [6] amumu        azir         annie        bard         blitzcrank  
-##  [11] brand        caitlyn      braum        ahri         cassiopeia  
-##  [16] chogath      alistar      darius       diana        corki       
-##  [21] draven       drmundo      evelynn      ekko         ezreal      
-##  [26] fiddlesticks fiora        elise        fizz         galio       
-##  [31] gangplank    garen        gnar         gragas       graves      
-##  [36] hecarim      illaoi       heimerdinger irelia       ivern       
-##  [41] janna        jarvaniv     jax          jayce        jhin        
-##  [46] jinx         kalista      karma        kassadin     katarina    
-## + ... omitted several vertices
-```
-
-```r
-#kled again
-```
+Garen is considered the "bridge" between most people. He is the most used node to cross information between nodes. High dependency
 
 
 #### Eigenvector Centrality, most influential vertex
 
+Eigenvector value represents who is the most "influential"
+
 
 ```r
-# set.seed(2)
-# #errorszzzzzzzzz randomlly
-# influential <- max(evcent(rivals)$vector)
-# index_of_influential <- match(influential, evcent(rivals)$vector)
-# print(index_of_influential)
-# rivals[[index_of_influential]]
-# #kled most rivals
-# 
-# influential <- max(evcent(friends)$vector)
-# index_of_influential <- match(influential, evcent(friends)$vector)
-# print(index_of_influential)
-# friends[[index_of_influential]]
-# #ivern friends (3)
-# 
-# most <- max(evcent(both)$vector)
-# index_of_influential <- match(influential, evcent(both)$vector)
-# print(index_of_influential)
-# both[[index_of_influential]]
-# #kled again
+influential <- max(evcent(friends)$vector)
+index_of_influential <- match(influential, evcent(friends)$vector)
+print(index_of_influential)
+```
+
+```
+## [1] 12
+```
+
+```r
+friends[[index_of_influential]]
+```
+
+```
+## $caitlyn
+## + 3/134 vertices, named, from dfef83e:
+## [1] ezreal jayce  vi
+```
+
+```r
+#Caitlyn
 ```
 
 
@@ -783,39 +571,7 @@ for(i in 1:nrow(l)) {
 legend('topleft',legend= legendAllFactions,pch=22, pt.cex = 4, pt.bg=factionColors, ncol = 2)
 ```
 
-![](network_graph_files/figure-html/unnamed-chunk-25-1.png)<!-- -->
-
-Friends Image Graph
-
-
-```r
-set.seed(1)
-# arrows point to x is friends with
-l <- layout.norm(layout_with_fr(friends, niter = 500, start.temp = 20 ))
-
-V(friends)$label.cex <- .01
-V(friends)$size <- 4.75
-V(friends)$shape <- "square"
-E(friends)$arrow.size <- 1.25
-
-plot(friends, layout = l, frame = TRUE, main = "Champion Relationships")
-
-img <- lapply(imgfilename, png::readPNG)
-```
-
-```
-## Warning in FUN(X[[i]], ...): libpng warning: iCCP: known incorrect sRGB profile
-```
-
-```r
-for(i in 1:nrow(l)) {  
-  rasterImage(img[[i]], l[i, 1]-0.02, l[i, 2]-0.02, l[i, 1]+0.02, l[i, 2]+0.02)
-}
-
-legend('topleft',legend= legendAllFactions,pch=22, pt.cex = 5, pt.bg=factionColors, ncol = 2)
-```
-
-![](network_graph_files/figure-html/unnamed-chunk-26-1.png)<!-- -->
+![](network_graph_files/figure-html/unnamed-chunk-23-1.png)<!-- -->
 
 Here we remove kled from the graph to see what it would look like
 
@@ -850,4 +606,39 @@ for(i in 1:nrow(l)) {
 legend('topleft',legend= legendAllFactions,pch=22, pt.cex = 4, pt.bg=factionColors, ncol = 2)
 ```
 
-![](network_graph_files/figure-html/unnamed-chunk-27-1.png)<!-- -->
+![](network_graph_files/figure-html/unnamed-chunk-24-1.png)<!-- -->
+
+
+
+Friends Image Graph
+
+
+```r
+set.seed(1)
+# arrows point to x is friends with
+l <- layout.norm(layout_with_fr(friends, niter = 500, start.temp = 20 ))
+
+V(friends)$label.cex <- .01
+V(friends)$size <- 4.75
+V(friends)$shape <- "square"
+E(friends)$arrow.size <- 1.25
+
+plot(friends, layout = l, frame = TRUE, main = "Champion Relationships")
+
+img <- lapply(imgfilename, png::readPNG)
+```
+
+```
+## Warning in FUN(X[[i]], ...): libpng warning: iCCP: known incorrect sRGB profile
+```
+
+```r
+for(i in 1:nrow(l)) {  
+  rasterImage(img[[i]], l[i, 1]-0.02, l[i, 2]-0.02, l[i, 1]+0.02, l[i, 2]+0.02)
+}
+
+legend('topleft',legend= legendAllFactions,pch=22, pt.cex = 5, pt.bg=factionColors, ncol = 2)
+```
+
+![](network_graph_files/figure-html/unnamed-chunk-25-1.png)<!-- -->
+
