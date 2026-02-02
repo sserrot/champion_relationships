@@ -4,6 +4,7 @@ Uses NetworkX for graph analysis (Louvain community detection) and Pyvis for int
 """
 
 import json
+import os
 import networkx as nx
 from pyvis.network import Network
 
@@ -169,6 +170,36 @@ def print_community_report(G, partition, communities):
             print(f"  {m:20s} [{faction}]")
 
 
+def champion_to_image_filename(name):
+    """Convert a champion display name to its image filename."""
+    # Special cases mapping
+    special = {
+        "Nunu & Willump": "nunu",
+        "Dr. Mundo": "drmundo",
+        "Cho'Gath": "chogath",
+        "Kha'Zix": "khazix",
+        "Kog'Maw": "kogmaw",
+        "Rek'Sai": "reksai",
+        "Vel'Koz": "velkoz",
+        "Kai'sa": "kaisa",
+        "Xin Zhao": "xinzhao",
+        "Jarvan IV": "jarvaniv",
+        "Lee Sin": "leesin",
+        "Miss Fortune": "missfortune",
+        "Master Yi": "masteryi",
+        "Twisted Fate": "twistedfate",
+        "Tahm Kench": "tahmkench",
+        "Aurelion Sol": "aurelionsol",
+        "LeBlanc": "leblanc",
+    }
+    if name in special:
+        return special[name] + ".png"
+    return name.lower().replace(" ", "").replace("'", "") + ".png"
+
+
+IMG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "R_analysis", "img")
+
+
 def build_interactive_viz(G, partition, communities, output_path="templates/network.html"):
     """Create an interactive Pyvis visualization."""
     net = Network(
@@ -188,7 +219,7 @@ def build_interactive_viz(G, partition, communities, output_path="templates/netw
         damping=0.09,
     )
 
-    # Add nodes colored by community
+    # Add nodes with champion portrait images
     for node in G.nodes:
         comm_id = partition.get(node, 0)
         color = COMMUNITY_COLORS[comm_id % len(COMMUNITY_COLORS)]
@@ -204,14 +235,36 @@ def build_interactive_viz(G, partition, communities, output_path="templates/netw
             f"Connections: {degree}"
         )
 
-        net.add_node(
-            node,
-            label=node,
-            title=title,
-            color=color,
-            size=10 + degree * 3,
-            font={"size": 12, "color": "white", "strokeWidth": 2, "strokeColor": "#000"},
-        )
+        img_file = champion_to_image_filename(node)
+        img_path = os.path.join(IMG_DIR, img_file)
+        has_image = os.path.exists(img_path)
+
+        if has_image:
+            # Use image node with community-colored border
+            net.add_node(
+                node,
+                label=node,
+                title=title,
+                shape="circularImage",
+                image=f"/img/{img_file}",
+                size=25 + degree * 2,
+                borderWidth=3,
+                color={
+                    "border": color,
+                    "highlight": {"border": "#ffffff"},
+                },
+                font={"size": 10, "color": "white", "strokeWidth": 2, "strokeColor": "#000"},
+            )
+        else:
+            # Fallback to colored dot for champions without images
+            net.add_node(
+                node,
+                label=node,
+                title=title,
+                color=color,
+                size=10 + degree * 3,
+                font={"size": 12, "color": "white", "strokeWidth": 2, "strokeColor": "#000"},
+            )
 
     # Add edges
     for u, v, data in G.edges(data=True):
