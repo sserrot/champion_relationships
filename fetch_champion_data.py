@@ -37,6 +37,34 @@ UNIVERSE_CHAMPION_URL = "https://universe.leagueoflegends.com/en_us/champion/{sl
 
 OUTPUT_FILE = "champions_updated.json"
 
+
+def load_existing() -> dict[str, dict]:
+    """Load already-fetched champions from the output file, keyed by name."""
+    path = Path(OUTPUT_FILE)
+    if not path.exists():
+        return {}
+    try:
+        with open(path) as f:
+            data = json.load(f)
+        existing = {}
+        for entry in data:
+            name = entry["champion_name"][0]
+            existing[name] = entry
+        return existing
+    except (json.JSONDecodeError, KeyError, IndexError):
+        return {}
+
+
+def save_results(existing: dict[str, dict]):
+    """Save the combined results dict, sorted by name."""
+    results = sorted(existing.values(), key=lambda x: x["champion_name"][0])
+    with open(OUTPUT_FILE, "w") as f:
+        json.dump(results, f, indent=2, ensure_ascii=False)
+    total = len(results)
+    with_rel = sum(1 for r in results if r["related"] != [""])
+    log.info(f"Saved {total} champions to {OUTPUT_FILE} ({with_rel} with relationships)")
+    return total
+
 # Mapping of special champion name -> universe slug
 SLUG_OVERRIDES = {
     "Wukong": "monkeyking",
@@ -83,8 +111,8 @@ def get_champion_slugs() -> dict[str, str]:
 # Strategy 1: Universe Meeps JSON API
 # ---------------------------------------------------------------------------
 
-def fetch_via_meeps(slugs: dict[str, str]) -> Optional[list[dict]]:
-    """Try the undocumented universe-meeps API."""
+def fetch_via_meeps(slugs: dict[str, str], existing: dict[str, dict]) -> bool:
+    """Try the undocumented universe-meeps API. Updates existing dict in-place."""
     log.info("Attempting universe-meeps API...")
 
     # Quick test with a single champion
@@ -93,14 +121,18 @@ def fetch_via_meeps(slugs: dict[str, str]) -> Optional[list[dict]]:
         resp = SESSION.get(test_url, timeout=10)
         if resp.status_code != 200:
             log.warning(f"Meeps API returned {resp.status_code} — skipping this strategy")
-            return None
+            return False
     except requests.RequestException as e:
         log.warning(f"Meeps API unreachable: {e}")
-        return None
+        return False
 
-    log.info("Meeps API accessible! Fetching all champions...")
-    results = []
-    for name, slug in slugs.items():
+    remaining = {n: s for n, s in slugs.items() if n not in existing}
+    log.info(f"Meeps API accessible! {len(remaining)} champions remaining (skipping {len(existing)} already fetched)")
+    if not remaining:
+        return True
+
+    fetched = 0
+    for name, slug in remaining.items():
         url = MEEPS_CHAMPION_URL.format(slug=slug)
         try:
             resp = SESSION.get(url, timeout=10)
@@ -145,29 +177,39 @@ def fetch_via_meeps(slugs: dict[str, str]) -> Optional[list[dict]]:
                     role = str(r)
                 break
 
-            results.append({
+            existing[name] = {
                 "champion_name": [name],
                 "region": [region if region else "Runeterra"],
                 "related": related if related else [""],
                 "race": [race],
                 "role": [role],
-            })
+            }
+            fetched += 1
             log.info(f"  {name}: {len(related)} related champions")
+
+            # Save incrementally every 10 champions
+            if fetched % 10 == 0:
+                save_results(existing)
+                log.info(f"  [checkpoint] {len(existing)}/{len(slugs)} total")
 
         except Exception as e:
             log.warning(f"  {name}: error — {e}")
 
         time.sleep(0.2)  # Rate limit
 
-    return results if results else None
+    # Final save
+    if fetched > 0:
+        save_results(existing)
+
+    return fetched > 0 or len(existing) > 0
 
 
 # ---------------------------------------------------------------------------
 # Strategy 2: Scrape Universe HTML (works if server-side rendered)
 # ---------------------------------------------------------------------------
 
-def fetch_via_html_scrape(slugs: dict[str, str]) -> Optional[list[dict]]:
-    """Scrape the Universe champion pages directly."""
+def fetch_via_html_scrape(slugs: dict[str, str], existing: dict[str, dict]) -> bool:
+    """Scrape the Universe champion pages directly. Updates existing dict in-place."""
     log.info("Attempting HTML scrape of Universe site...")
 
     test_url = UNIVERSE_CHAMPION_URL.format(slug="aatrox")
@@ -175,18 +217,21 @@ def fetch_via_html_scrape(slugs: dict[str, str]) -> Optional[list[dict]]:
         resp = SESSION.get(test_url, timeout=15)
         if resp.status_code != 200:
             log.warning(f"Universe site returned {resp.status_code}")
-            return None
-        # Check if content is server-rendered or just a JS shell
+            return False
         if "related" not in resp.text.lower() and "relatedChampions" not in resp.text:
             log.warning("Universe page appears to be JS-rendered only — HTML scrape won't work")
-            return None
+            return False
     except requests.RequestException as e:
         log.warning(f"Universe site unreachable: {e}")
-        return None
+        return False
 
-    log.info("Universe site accessible with content! Scraping all champions...")
-    results = []
-    for name, slug in slugs.items():
+    remaining = {n: s for n, s in slugs.items() if n not in existing}
+    log.info(f"Universe site accessible! {len(remaining)} champions remaining (skipping {len(existing)} already fetched)")
+    if not remaining:
+        return True
+
+    fetched = 0
+    for name, slug in remaining.items():
         url = UNIVERSE_CHAMPION_URL.format(slug=slug)
         try:
             resp = SESSION.get(url, timeout=15)
@@ -196,12 +241,10 @@ def fetch_via_html_scrape(slugs: dict[str, str]) -> Optional[list[dict]]:
 
             soup = BeautifulSoup(resp.text, "lxml")
 
-            # Try to find embedded JSON data (some React sites embed state)
             scripts = soup.find_all("script")
             champion_json = None
             for script in scripts:
                 if script.string and ("related-champions" in script.string or "relatedChampions" in script.string):
-                    # Try to extract JSON from script tag
                     match = re.search(r'(\{.*"champion".*\})', script.string, re.DOTALL)
                     if match:
                         try:
@@ -210,77 +253,81 @@ def fetch_via_html_scrape(slugs: dict[str, str]) -> Optional[list[dict]]:
                             pass
 
             if champion_json:
-                # Parse embedded JSON same as meeps approach
                 cdata = champion_json.get("champion", champion_json)
                 related = [r.get("name", "") for r in cdata.get("related-champions", [])]
                 region = cdata.get("associated-faction-slug", "").replace("-", " ").title() or "Runeterra"
                 race = ""
                 role = ""
             else:
-                # Fall back to HTML parsing (similar to existing spider)
                 related = []
                 related_section = soup.find("ul", class_=re.compile(r"relatedChampions|champion.*grid|shouldScroll"))
                 if related_section:
                     for li in related_section.find_all("li"):
                         link = li.find("a")
                         if link and link.get("href", "").startswith("/en_us/champion/"):
-                            # Extract name from text or href
                             champ_name_el = li.find("h6") or li.find("div", class_=re.compile(r"champ"))
                             if champ_name_el:
                                 related.append(champ_name_el.get_text(strip=True))
                             else:
-                                # Derive from href
                                 href_slug = link["href"].rstrip("/").split("/")[-1]
                                 related.append(href_slug.title())
 
-                # Region
                 region_el = soup.find("div", class_=re.compile(r"race_|region"))
                 region = region_el.get_text(strip=True) if region_el else "Runeterra"
 
-                # Race - look for the race section from the screenshot DOM
                 race = ""
                 race_el = soup.find("div", class_=re.compile(r"race_"))
                 if race_el:
                     race = race_el.get_text(strip=True)
 
-                # Role
                 role = ""
                 role_el = soup.find(string=re.compile(r"^(Fighter|Mage|Assassin|Marksman|Tank|Support)$"))
                 if role_el:
                     role = role_el.strip()
 
-            results.append({
+            existing[name] = {
                 "champion_name": [name],
                 "region": [region],
                 "related": related if related else [""],
                 "race": [race],
                 "role": [role],
-            })
+            }
+            fetched += 1
             log.info(f"  {name}: {len(related)} related")
+
+            if fetched % 10 == 0:
+                save_results(existing)
+                log.info(f"  [checkpoint] {len(existing)}/{len(slugs)} total")
 
         except Exception as e:
             log.warning(f"  {name}: error — {e}")
 
         time.sleep(0.3)
 
-    return results if results else None
+    if fetched > 0:
+        save_results(existing)
+
+    return fetched > 0 or len(existing) > 0
 
 
 # ---------------------------------------------------------------------------
 # Strategy 3: Playwright headless browser
 # ---------------------------------------------------------------------------
 
-def fetch_via_playwright(slugs: dict[str, str]) -> Optional[list[dict]]:
-    """Use Playwright to render JS and scrape the fully loaded page."""
+def fetch_via_playwright(slugs: dict[str, str], existing: dict[str, dict]) -> bool:
+    """Use Playwright to render JS and scrape the fully loaded page. Updates existing dict in-place."""
     try:
         from playwright.sync_api import sync_playwright
     except ImportError:
         log.warning("Playwright not installed. Install with: pip install playwright && playwright install chromium")
-        return None
+        return False
 
-    log.info("Using Playwright headless browser...")
-    results = []
+    remaining = {n: s for n, s in slugs.items() if n not in existing}
+    log.info(f"Using Playwright headless browser... {len(remaining)} champions remaining (skipping {len(existing)} already fetched)")
+    if not remaining:
+        return True
 
+    fetched = 0
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         context = browser.new_context(
@@ -288,29 +335,21 @@ def fetch_via_playwright(slugs: dict[str, str]) -> Optional[list[dict]]:
         )
         page = context.new_page()
 
-        for name, slug in slugs.items():
+        for name, slug in remaining.items():
             url = UNIVERSE_CHAMPION_URL.format(slug=slug)
             try:
                 page.goto(url, wait_until="networkidle", timeout=30000)
-                # Wait for the related champions section to load
                 page.wait_for_timeout(2000)
 
-                # Try to intercept the meeps API response from network
-                # Or parse the rendered DOM
                 html = page.content()
                 soup = BeautifulSoup(html, "lxml")
 
-                # Related champions - from the screenshot we can see the DOM structure
                 related = []
-                # Look for champion links in the related section
-                related_links = soup.select('a[href*="/en_us/champion/"]')
-                # Filter to only those in the related champions container
                 related_container = soup.find("ul", class_=re.compile(r"shouldScroll|champions_"))
                 if related_container:
                     for li in related_container.find_all("li"):
                         link = li.find("a")
                         if link:
-                            # Get champion name from h6 or similar element
                             name_el = li.find("h6") or li.find(class_=re.compile(r"Xin|name"))
                             if name_el:
                                 related.append(name_el.get_text(strip=True))
@@ -319,7 +358,6 @@ def fetch_via_playwright(slugs: dict[str, str]) -> Optional[list[dict]]:
                                 champ_slug = href.rstrip("/").split("/")[-1]
                                 related.append(champ_slug)
 
-                # Region
                 region = "Runeterra"
                 region_section = soup.find(string=re.compile(r"REGION"))
                 if region_section:
@@ -329,7 +367,6 @@ def fetch_via_playwright(slugs: dict[str, str]) -> Optional[list[dict]]:
                         if region_text:
                             region = region_text
 
-                # Race
                 race = ""
                 race_section = soup.find(string=re.compile(r"^RACE$"))
                 if race_section:
@@ -337,7 +374,6 @@ def fetch_via_playwright(slugs: dict[str, str]) -> Optional[list[dict]]:
                     if parent:
                         race = parent.get_text(strip=True).replace("RACE", "").strip()
 
-                # Role
                 role = ""
                 role_section = soup.find(string=re.compile(r"^ROLE$"))
                 if role_section:
@@ -345,14 +381,19 @@ def fetch_via_playwright(slugs: dict[str, str]) -> Optional[list[dict]]:
                     if parent:
                         role = parent.get_text(strip=True).replace("ROLE", "").strip()
 
-                results.append({
+                existing[name] = {
                     "champion_name": [name],
                     "region": [region],
                     "related": related if related else [""],
                     "race": [race],
                     "role": [role],
-                })
+                }
+                fetched += 1
                 log.info(f"  {name}: region={region}, race={race}, role={role}, related={len(related)}")
+
+                if fetched % 10 == 0:
+                    save_results(existing)
+                    log.info(f"  [checkpoint] {len(existing)}/{len(slugs)} total")
 
             except Exception as e:
                 log.warning(f"  {name}: error — {e}")
@@ -361,7 +402,10 @@ def fetch_via_playwright(slugs: dict[str, str]) -> Optional[list[dict]]:
 
         browser.close()
 
-    return results if results else None
+    if fetched > 0:
+        save_results(existing)
+
+    return fetched > 0 or len(existing) > 0
 
 
 # ---------------------------------------------------------------------------
@@ -388,36 +432,42 @@ def main():
             log.error("No fallback data available. Exiting.")
             sys.exit(1)
 
-    # Step 2: Try each fetch strategy in order
-    results = None
+    # Step 2: Load existing progress
+    existing = load_existing()
+    if existing:
+        log.info(f"Loaded {len(existing)} previously fetched champions from {OUTPUT_FILE}")
 
-    # Strategy 1: Meeps API
-    results = fetch_via_meeps(slugs)
+    remaining_count = len(slugs) - len(set(existing) & set(slugs))
+    if remaining_count == 0:
+        log.info(f"All {len(slugs)} champions already fetched! Nothing to do.")
+        log.info(f"Delete {OUTPUT_FILE} to re-fetch everything.")
+        return
 
-    # Strategy 2: HTML scrape
-    if not results:
-        results = fetch_via_html_scrape(slugs)
+    log.info(f"{remaining_count} champions still need fetching")
 
-    # Strategy 3: Playwright
-    if not results:
-        results = fetch_via_playwright(slugs)
+    # Step 3: Try each fetch strategy in order
+    success = fetch_via_meeps(slugs, existing)
 
-    if not results:
+    if not success:
+        success = fetch_via_html_scrape(slugs, existing)
+
+    if not success:
+        success = fetch_via_playwright(slugs, existing)
+
+    if not success and not existing:
         log.error("All strategies failed. Check your network connection and try again.")
         log.info("Tips:")
         log.info("  - The meeps API may require VPN or specific region")
         log.info("  - For Playwright: pip install playwright && playwright install chromium")
         sys.exit(1)
 
-    # Step 3: Sort and save
-    results.sort(key=lambda x: x["champion_name"][0])
-
-    output_path = Path(OUTPUT_FILE)
-    with open(output_path, "w") as f:
-        json.dump(results, f, indent=2, ensure_ascii=False)
-
-    log.info(f"Saved {len(results)} champions to {output_path}")
-    log.info(f"Champions with relationships: {sum(1 for r in results if r['related'] != [''])}")
+    # Step 4: Summary
+    total = len(existing)
+    still_missing = len(slugs) - len(set(existing) & set(slugs))
+    if still_missing > 0:
+        log.info(f"{still_missing} champions still missing — run again to retry them")
+    else:
+        log.info(f"All {total} champions fetched successfully!")
 
 
 if __name__ == "__main__":
