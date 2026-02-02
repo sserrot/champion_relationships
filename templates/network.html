@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>LoL Champion Relationship Network</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #1a1a2e; color: #eee; font-family: 'Segoe UI', sans-serif; }
+        .header {
+            padding: 15px 25px;
+            background: #16213e;
+            border-bottom: 2px solid #0f3460;
+        }
+        .header h1 { font-size: 1.4em; color: #e94560; }
+        .header p { font-size: 0.85em; color: #aaa; margin-top: 4px; }
+        .legend {
+            padding: 10px 25px;
+            background: #16213e;
+            border-bottom: 1px solid #0f3460;
+            font-size: 0.75em;
+            line-height: 1.8;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        .edge-legend {
+            padding: 6px 25px;
+            background: #16213e;
+            border-bottom: 1px solid #0f3460;
+            font-size: 0.75em;
+        }
+        .edge-legend span { margin-right: 20px; }
+        .stats {
+            padding: 8px 25px;
+            background: #0f3460;
+            font-size: 0.8em;
+        }
+        .stats span { margin-right: 25px; }
+        #graph-container { width: 100%; height: calc(100vh - 160px); }
+        iframe { border: none; width: 100%; height: 100%; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>League of Legends Champion Relationship Network</h1>
+        <p>Interactive network graph with Louvain community detection. Hover over nodes for details. Drag to rearrange.</p>
+    </div>
+    <div class="stats">
+        <span>Champions: 150</span>
+        <span>Relationships: 496</span>
+        <span>Communities: 10</span>
+        <span>Modularity: 0.5099</span>
+    </div>
+    <div class="edge-legend">
+        <span style="color:#44ff44;">&#9644; Friend</span>
+        <span style="color:#ff4444;">- - Rival</span>
+        <span style="color:#666;">&#9644; Related</span>
+    </div>
+    <div class="legend"><span style="color:#e6194b; margin-right:15px;">&#9679; Community 0 (27 champs, Demacia)</span> <span style="color:#3cb44b; margin-right:15px;">&#9679; Community 1 (21 champs, Ionia)</span> <span style="color:#ffe119; margin-right:15px;">&#9679; Community 2 (18 champs, Bandle City)</span> <span style="color:#4363d8; margin-right:15px;">&#9679; Community 3 (16 champs, Freljord)</span> <span style="color:#f58231; margin-right:15px;">&#9679; Community 4 (16 champs, Zaun)</span> <span style="color:#911eb4; margin-right:15px;">&#9679; Community 5 (15 champs, Bilgewater)</span> <span style="color:#42d4f4; margin-right:15px;">&#9679; Community 6 (14 champs, The Void)</span> <span style="color:#f032e6; margin-right:15px;">&#9679; Community 7 (9 champs, Shurima)</span> <span style="color:#bfef45; margin-right:15px;">&#9679; Community 8 (7 champs, Ionia)</span> <span style="color:#fabed4; margin-right:15px;">&#9679; Community 9 (7 champs, Targon)</span></div>
+    <div id="graph-container">
+        <iframe src="graph_raw.html"></iframe>
+    </div>
+</body>
+</html>
