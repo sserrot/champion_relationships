@@ -1,0 +1,6 @@
+requests
+beautifulsoup4
+lxml
+
+# Optional: for headless browser fallback
+# playwright
