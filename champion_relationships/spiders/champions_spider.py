@@ -3,6 +3,8 @@ import champion_list
 from bs4 import BeautifulSoup
 import re
 
+from champion_normalization import normalize_champion_name
+
 base = 'https://universe.leagueoflegends.com/en_US/champion/'
 #'https://universe.leagueoflegends.com/en_US/champion/aatrox/'
 
@@ -61,8 +63,9 @@ class ChampionsSpider(scrapy.Spider):
         except IndexError:
             rivals = [""]
 
-        # get rid of MonkeyKing for further data analysis
-        friends = [champ_name.replace('MonkeyKing', 'Wukong') for champ_name in friends]
+        # Normalize scraped ids like MonkeyKing before writing analysis data.
+        friends = [normalize_champion_name(champ_name) for champ_name in friends]
+        rivals = [normalize_champion_name(champ_name) for champ_name in rivals]
 
         yield {
             "champion_name": champion_name,
