@@ -21,6 +21,29 @@ champions.json - same information in JSON.
 
 champion_list.py - Uses [Riot API](https://developer.riotgames.com/) to extract a formatted and ordered list of all champions.
 
+## Current graph pipeline
+
+`champions_canonical.json` is the source of truth for the Flask interactive network at `/network`.
+
+To refresh local canonical data after editing the JSON inputs:
+
+```powershell
+python fetch_champion_data.py --merge-only
+```
+
+To fetch missing champion lore data, merge it into the canonical dataset, and regenerate the interactive visualization:
+
+```powershell
+python fetch_champion_data.py --rebuild-graph
+```
+
+Pipeline files:
+
+- `champions_new.json`: broad older dataset used as the base fallback.
+- `champions_updated.json`: newer fetched relationship data.
+- `merge_champion_data.py`: combines both inputs into `champions_canonical.json`.
+- `community_analysis.py`: reads `champions_canonical.json` and writes `templates/network.html`.
+
 tutorial/spiders/champions_spider.py - Scrapy Spider that crawls Riot website for champion information not in the Riot API.
 
 champion_relationships isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.

@@ -9,22 +9,19 @@ Strategy:
 Usage:
   pip install requests beautifulsoup4 lxml
   python fetch_champion_data.py
+  python fetch_champion_data.py --rebuild-graph
 
 Optional (for fallback headless scraping):
   pip install playwright && playwright install chromium
 """
 
+import argparse
 import json
-import os
 import re
 import sys
 import time
 import logging
 from pathlib import Path
-from typing import Optional
-
-import requests
-from bs4 import BeautifulSoup
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 log = logging.getLogger(__name__)
@@ -65,6 +62,43 @@ def save_results(existing: dict[str, dict]):
     log.info(f"Saved {total} champions to {OUTPUT_FILE} ({with_rel} with relationships)")
     return total
 
+
+def run_canonical_pipeline(rebuild_graph: bool = False):
+    """Merge fetched data into the canonical dataset, optionally rebuilding HTML."""
+    import merge_champion_data
+
+    merge_champion_data.main()
+
+    if rebuild_graph:
+        import community_analysis
+
+        community_analysis.main()
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description=(
+            "Fetch champion relationship data, merge it into champions_canonical.json, "
+            "and optionally rebuild the interactive network."
+        )
+    )
+    parser.add_argument(
+        "--merge-only",
+        action="store_true",
+        help="Skip network fetching and only rebuild champions_canonical.json from local JSON files.",
+    )
+    parser.add_argument(
+        "--skip-merge",
+        action="store_true",
+        help="Only update champions_updated.json; do not refresh champions_canonical.json.",
+    )
+    parser.add_argument(
+        "--rebuild-graph",
+        action="store_true",
+        help="After merging canonical data, regenerate templates/network.html.",
+    )
+    return parser.parse_args()
+
 # Mapping of special champion name -> universe slug
 SLUG_OVERRIDES = {
     "Wukong": "monkeyking",
@@ -72,25 +106,50 @@ SLUG_OVERRIDES = {
     "Nunu & Willump": "nunu",
 }
 
-SESSION = requests.Session()
-SESSION.headers.update({
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    "Accept": "application/json, text/html, */*",
-    "Accept-Language": "en-US,en;q=0.9",
-    "Referer": "https://universe.leagueoflegends.com/",
-    "Origin": "https://universe.leagueoflegends.com",
-})
+SESSION = None
+
+
+def require_requests():
+    try:
+        import requests
+    except ImportError as exc:
+        raise RuntimeError("Install requests to fetch champion data: pip install requests") from exc
+    return requests
+
+
+def require_beautiful_soup():
+    try:
+        from bs4 import BeautifulSoup
+    except ImportError as exc:
+        raise RuntimeError("Install Beautiful Soup to scrape champion data: pip install beautifulsoup4 lxml") from exc
+    return BeautifulSoup
+
+
+def get_session():
+    global SESSION
+    if SESSION is None:
+        requests = require_requests()
+        SESSION = requests.Session()
+        SESSION.headers.update({
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "Accept": "application/json, text/html, */*",
+            "Accept-Language": "en-US,en;q=0.9",
+            "Referer": "https://universe.leagueoflegends.com/",
+            "Origin": "https://universe.leagueoflegends.com",
+        })
+    return SESSION
 
 
 def get_champion_slugs() -> dict[str, str]:
     """Get champion name -> slug mapping from Data Dragon."""
+    session = get_session()
     log.info("Fetching champion list from Data Dragon...")
-    resp = SESSION.get(DDRAGON_VERSIONS_URL, timeout=10)
+    resp = session.get(DDRAGON_VERSIONS_URL, timeout=10)
     resp.raise_for_status()
     version = resp.json()[0]
     log.info(f"Latest game version: {version}")
 
-    resp = SESSION.get(DDRAGON_CHAMPIONS_URL.format(version=version), timeout=10)
+    resp = session.get(DDRAGON_CHAMPIONS_URL.format(version=version), timeout=10)
     resp.raise_for_status()
     data = resp.json()["data"]
 
@@ -113,12 +172,14 @@ def get_champion_slugs() -> dict[str, str]:
 
 def fetch_via_meeps(slugs: dict[str, str], existing: dict[str, dict]) -> bool:
     """Try the undocumented universe-meeps API. Updates existing dict in-place."""
+    requests = require_requests()
+    session = get_session()
     log.info("Attempting universe-meeps API...")
 
     # Quick test with a single champion
     test_url = MEEPS_CHAMPION_URL.format(slug="aatrox")
     try:
-        resp = SESSION.get(test_url, timeout=10)
+        resp = session.get(test_url, timeout=10)
         if resp.status_code != 200:
             log.warning(f"Meeps API returned {resp.status_code} — skipping this strategy")
             return False
@@ -135,7 +196,7 @@ def fetch_via_meeps(slugs: dict[str, str], existing: dict[str, dict]) -> bool:
     for name, slug in remaining.items():
         url = MEEPS_CHAMPION_URL.format(slug=slug)
         try:
-            resp = SESSION.get(url, timeout=10)
+            resp = session.get(url, timeout=10)
             if resp.status_code != 200:
                 log.warning(f"  {name} ({slug}): HTTP {resp.status_code}")
                 continue
@@ -210,11 +271,14 @@ def fetch_via_meeps(slugs: dict[str, str], existing: dict[str, dict]) -> bool:
 
 def fetch_via_html_scrape(slugs: dict[str, str], existing: dict[str, dict]) -> bool:
     """Scrape the Universe champion pages directly. Updates existing dict in-place."""
+    requests = require_requests()
+    session = get_session()
+    BeautifulSoup = require_beautiful_soup()
     log.info("Attempting HTML scrape of Universe site...")
 
     test_url = UNIVERSE_CHAMPION_URL.format(slug="aatrox")
     try:
-        resp = SESSION.get(test_url, timeout=15)
+        resp = session.get(test_url, timeout=15)
         if resp.status_code != 200:
             log.warning(f"Universe site returned {resp.status_code}")
             return False
@@ -234,7 +298,7 @@ def fetch_via_html_scrape(slugs: dict[str, str], existing: dict[str, dict]) -> b
     for name, slug in remaining.items():
         url = UNIVERSE_CHAMPION_URL.format(slug=slug)
         try:
-            resp = SESSION.get(url, timeout=15)
+            resp = session.get(url, timeout=15)
             if resp.status_code != 200:
                 log.warning(f"  {name}: HTTP {resp.status_code}")
                 continue
@@ -316,6 +380,7 @@ def fetch_via_html_scrape(slugs: dict[str, str], existing: dict[str, dict]) -> b
 
 def fetch_via_playwright(slugs: dict[str, str], existing: dict[str, dict]) -> bool:
     """Use Playwright to render JS and scrape the fully loaded page. Updates existing dict in-place."""
+    BeautifulSoup = require_beautiful_soup()
     try:
         from playwright.sync_api import sync_playwright
     except ImportError:
@@ -413,6 +478,15 @@ def fetch_via_playwright(slugs: dict[str, str], existing: dict[str, dict]) -> bo
 # ---------------------------------------------------------------------------
 
 def main():
+    args = parse_args()
+
+    if args.merge_only:
+        if args.skip_merge:
+            log.info("--merge-only and --skip-merge were both provided; nothing to do.")
+            return
+        run_canonical_pipeline(rebuild_graph=args.rebuild_graph)
+        return
+
     # Step 1: Get champion list from Data Dragon
     try:
         slugs = get_champion_slugs()
@@ -441,6 +515,8 @@ def main():
     if remaining_count == 0:
         log.info(f"All {len(slugs)} champions already fetched! Nothing to do.")
         log.info(f"Delete {OUTPUT_FILE} to re-fetch everything.")
+        if not args.skip_merge:
+            run_canonical_pipeline(rebuild_graph=args.rebuild_graph)
         return
 
     log.info(f"{remaining_count} champions still need fetching")
@@ -468,6 +544,9 @@ def main():
         log.info(f"{still_missing} champions still missing — run again to retry them")
     else:
         log.info(f"All {total} champions fetched successfully!")
+
+    if not args.skip_merge:
+        run_canonical_pipeline(rebuild_graph=args.rebuild_graph)
 
 
 if __name__ == "__main__":
