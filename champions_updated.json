@@ -1,0 +1,1937 @@
+[
+  {
+    "champion_name": [
+      "Aatrox"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "kayn",
+      "varus",
+      "tryndamere"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Ahri"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "yasuo",
+      "lillia",
+      "monkeyking"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Akali"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "kennen",
+      "shen",
+      "zed",
+      "jhin"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Akshan"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "lucian",
+      "senna",
+      "viego",
+      "gwen"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Alistar"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "xinzhao"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Ambessa"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "mel",
+      "caitlyn",
+      "leblanc"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Anivia"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "ornn",
+      "volibear",
+      "ashe",
+      "nunu"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Aphelios"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "diana",
+      "leona"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Aurora"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "ornn",
+      "udyr",
+      "anivia",
+      "volibear"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Bel'Veth"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "kaisa",
+      "lissandra",
+      "malzahar",
+      "velkoz"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Brand"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "ryze",
+      "anivia",
+      "lissandra",
+      "nasus",
+      "renekton",
+      "xerath"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Briar"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "sion",
+      "swain",
+      "talon",
+      "vladimir"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Caitlyn"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "vi",
+      "jinx"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Camille"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "caitlyn",
+      "ezreal",
+      "jayce",
+      "viktor",
+      "vi",
+      "ekko",
+      "orianna",
+      "warwick"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Cassiopeia"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "katarina",
+      "renekton",
+      "nasus",
+      "xerath",
+      "sivir",
+      "azir",
+      "talon"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Cho'Gath"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "kogmaw",
+      "khazix",
+      "velkoz"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Corki"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "heimerdinger",
+      "veigar"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Dr. Mundo"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "ekko"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Evelynn"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "vayne",
+      "tahmkench",
+      "ryze"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Ezreal"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "kassadin",
+      "lux",
+      "reksai"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Fiora"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "jarvaniv",
+      "garen",
+      "jax"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Galio"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "kayle",
+      "morgana",
+      "lux",
+      "sylas"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Gragas"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "tryndamere",
+      "braum",
+      "jax",
+      "ashe"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Gwen"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "viego",
+      "senna",
+      "yorick"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Heimerdinger"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "corki",
+      "gnar",
+      "ziggs",
+      "rumble",
+      "veigar"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Hwei"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "jhin",
+      "shen",
+      "zed"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Irelia"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "karma",
+      "swain"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Janna"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "ekko",
+      "jinx",
+      "vi",
+      "urgot"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Jarvan IV"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "garen",
+      "shyvana",
+      "xinzhao",
+      "lux"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "K'Sante"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "azir",
+      "renekton",
+      "xerath"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Kai'Sa"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "malzahar"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Karma"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "irelia",
+      "leesin"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Karthus"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "mordekaiser",
+      "thresh",
+      "yorick",
+      "soraka",
+      "kindred"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Kassadin"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "malzahar",
+      "ezreal"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Katarina"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "cassiopeia",
+      "sion",
+      "talon",
+      "garen",
+      "swain",
+      "darius"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Kayle"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "galio",
+      "morgana",
+      "taric"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Kayn"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "aatrox",
+      "varus",
+      "zed",
+      "darius"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Kennen"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "akali",
+      "shen",
+      "zed"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Kog'Maw"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "malzahar",
+      "khazix",
+      "chogath",
+      "velkoz"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "LeBlanc"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "vladimir",
+      "mel",
+      "mordekaiser"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Lee Sin"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "karma",
+      "udyr"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Lillia"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "ivern",
+      "ahri",
+      "yasuo"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Malphite"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "ezreal",
+      "kassadin",
+      "qiyana",
+      "taliyah"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Malzahar"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "kassadin",
+      "kaisa"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Maokai"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "malphite",
+      "zyra",
+      "yorick"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Master Yi"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "monkeyking",
+      "singed"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Mel"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "ambessa",
+      "jayce",
+      "leblanc"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Milio"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "neeko",
+      "nidalee",
+      "qiyana"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Mordekaiser"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "leblanc",
+      "veigar",
+      "vladimir"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Morgana"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "kayle",
+      "galio",
+      "taric"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Nasus"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "renekton",
+      "azir",
+      "xerath",
+      "sivir"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Neeko"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "nidalee",
+      "rengar",
+      "ezreal"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Nidalee"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "neeko",
+      "rengar"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Nilah"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "graves",
+      "illaoi",
+      "viego",
+      "fiddlesticks"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Nunu & Willump"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "lissandra",
+      "anivia"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Olaf"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "sejuani",
+      "volibear",
+      "missfortune",
+      "lucian"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Orianna"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "blitzcrank",
+      "camille",
+      "skarner"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Ornn"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "volibear",
+      "anivia",
+      "braum"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Pantheon"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "aatrox",
+      "aurelionsol",
+      "leona"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Qiyana"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "malphite",
+      "rengar",
+      "zyra"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Rammus"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      ""
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Rell"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "leblanc",
+      "samira"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Renata Glasc"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      ""
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Renekton"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "nasus",
+      "azir",
+      "xerath",
+      "sivir"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Riven"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "leblanc",
+      "yasuo"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Rumble"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "tristana",
+      "ziggs",
+      "heimerdinger",
+      "teemo",
+      "veigar"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Samira"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "darius",
+      "leblanc"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Seraphine"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "skarner"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Sett"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "alistar",
+      "draven"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Shyvana"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "jarvaniv",
+      "xinzhao",
+      "sona"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Singed"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "warwick",
+      "riven",
+      "masteryi"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Sivir"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "azir",
+      "nasus",
+      "taliyah"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Skarner"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "malphite",
+      "qiyana",
+      "milio"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Smolder"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "viego",
+      "shyvana",
+      "aurelionsol"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Sona"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "taric",
+      "xinzhao",
+      "ryze"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Soraka"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "aurelionsol",
+      "syndra",
+      "warwick"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Sylas"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "lux",
+      "galio"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Talon"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "katarina",
+      "quinn",
+      "cassiopeia"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Teemo"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "tristana",
+      "lulu",
+      "corki"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Tristana"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "teemo",
+      "rumble"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Trundle"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "lissandra",
+      "ashe",
+      "sejuani",
+      "ryze"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Twitch"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "zac"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Udyr"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "leesin",
+      "sejuani",
+      "volibear"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Urgot"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "swain",
+      "ekko",
+      "camille",
+      "darius"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Vayne"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "vladimir",
+      "warwick",
+      "sion"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Vex"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "lucian",
+      "senna",
+      "thresh",
+      "viego"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Viego"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "hecarim",
+      "kalista",
+      "senna",
+      "thresh",
+      "vladimir",
+      "yorick"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Viktor"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "jayce",
+      "heimerdinger",
+      "blitzcrank"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Vladimir"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "swain",
+      "leblanc",
+      "elise",
+      "kayn"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Volibear"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "ornn",
+      "anivia",
+      "lissandra"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Wukong"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "masteryi",
+      "ahri"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Xerath"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "renekton",
+      "cassiopeia",
+      "nasus",
+      "azir",
+      "sivir",
+      "taliyah",
+      "brand"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Xin Zhao"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "jarvaniv",
+      "yunara",
+      "sona"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Yone"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "yasuo",
+      "lillia"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Yorick"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "hecarim",
+      "kalista",
+      "thresh",
+      "karthus",
+      "maokai",
+      "kindred"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Yunara"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "xinzhao",
+      "kennen"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Yuumi"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "lulu",
+      "tristana",
+      "teemo"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Zaahen"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "xinzhao",
+      "yunara",
+      "kayn",
+      "varus"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Zeri"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "ekko"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Zilean"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "aatrox",
+      "jax",
+      "velkoz"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  },
+  {
+    "champion_name": [
+      "Zoe"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "aurelionsol",
+      "pantheon"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      ""
+    ]
+  }
+]

@@ -5,8 +5,26 @@ Uses NetworkX for graph analysis (Louvain community detection) and Pyvis for int
 
 import json
 import os
+
+try:
+    import numpy as np
+except ImportError:
+    np = None
+else:
+    # Older NetworkX versions in the checked-in virtualenv still reference
+    # NumPy aliases removed in NumPy 2.x.
+    if not hasattr(np, "float_"):
+        np.float_ = np.float64
+    if not hasattr(np, "int"):
+        np.int = int
+    if not hasattr(np, "float"):
+        np.float = float
+    if not hasattr(np, "complex"):
+        np.complex = complex
+
 import networkx as nx
-from pyvis.network import Network
+
+from champion_normalization import normalize_champion_name, normalize_name_key
 
 # Faction color mapping
 FACTION_COLORS = {
@@ -40,20 +58,55 @@ COMMUNITY_COLORS = [
     "#aaffc3", "#808000", "#ffd8b1", "#000075", "#a9a9a9",
 ]
 
+def first_value(entry, field):
+    values = entry.get(field, [""])
+    if not values:
+        return ""
+    return values[0]
 
-def load_data_new(path="champions_new.json"):
+
+def load_data_new(path="champions_canonical.json", fallback_path="champions_new.json"):
     """Load the newer dataset which has region/related/race/role fields."""
     with open(path) as f:
         data = json.load(f)
 
+    fallback_by_key = {}
+    canonical_names = {}
+    if fallback_path and os.path.exists(fallback_path):
+        with open(fallback_path) as f:
+            fallback_data = json.load(f)
+        for entry in fallback_data:
+            name = first_value(entry, "champion_name")
+            normalized = normalize_champion_name(name)
+            key = normalize_name_key(normalized)
+            canonical_names[key] = normalized
+            fallback_by_key[key] = entry
+
+    for entry in data:
+        name = first_value(entry, "champion_name")
+        normalized = normalize_champion_name(name)
+        canonical_names[normalize_name_key(normalized)] = normalized
+
     champions = {}
     for entry in data:
-        name = entry["champion_name"][0]
+        name = normalize_champion_name(first_value(entry, "champion_name"), canonical_names)
+        key = normalize_name_key(name)
+        fallback = fallback_by_key.get(key, {})
+        region = first_value(entry, "region")
+        fallback_region = first_value(fallback, "region")
+        if not region or (region == "Runeterra" and fallback_region and fallback_region != "Runeterra"):
+            region = fallback_region
+        race = first_value(entry, "race") or first_value(fallback, "race")
+        role = first_value(entry, "role") or first_value(fallback, "role")
         champions[name] = {
-            "region": entry.get("region", [""])[0],
-            "related": [r for r in entry.get("related", [""]) if r],
-            "race": entry.get("race", [""])[0],
-            "role": entry.get("role", [""])[0],
+            "region": region,
+            "related": [
+                normalize_champion_name(r, canonical_names)
+                for r in entry.get("related", [""])
+                if normalize_champion_name(r, canonical_names)
+            ],
+            "race": race,
+            "role": role,
         }
     return champions
 
@@ -65,29 +118,25 @@ def load_data_old(path="champions.json"):
 
     champions = {}
     for entry in data:
-        name = entry["champion_name"][0]
+        name = normalize_champion_name(entry["champion_name"][0])
         champions[name] = {
             "faction": entry.get("faction", [""])[0],
-            "friends": [r for r in entry.get("friends", [""]) if r],
-            "rivals": [r for r in entry.get("rivals", [""]) if r],
+            "friends": [normalize_champion_name(r) for r in entry.get("friends", [""]) if r],
+            "rivals": [normalize_champion_name(r) for r in entry.get("rivals", [""]) if r],
         }
     return champions
 
 
 def build_graph(champions_new, champions_old):
-    """Build a NetworkX graph combining both datasets."""
+    """Build a NetworkX graph using the updated champions dataset as truth."""
     G = nx.Graph()
+    node_lookup = {normalize_name_key(name): name for name in champions_new}
 
     # Add all champions as nodes with attributes
     for name, data in champions_new.items():
         faction = data["region"]
         # Try to get faction from old data if available
-        old_name_variants = [name, name.replace(" ", ""), name.replace("'", "")]
-        old_data = None
-        for v in old_name_variants:
-            if v in champions_old:
-                old_data = champions_old[v]
-                break
+        old_data = champions_old.get(name)
 
         old_faction = old_data["faction"] if old_data else ""
         display_faction = faction if faction else old_faction
@@ -97,45 +146,48 @@ def build_graph(champions_new, champions_old):
     # Add edges from new dataset (related = general relationship)
     for name, data in champions_new.items():
         for related in data["related"]:
-            if related in G.nodes:
-                G.add_edge(name, related, relation="related")
+            related_node = node_lookup.get(normalize_name_key(related))
+            if related_node in G.nodes:
+                G.add_edge(name, related_node, relation="related")
 
     # Add edges from old dataset (friends and rivals)
     for old_name, data in champions_old.items():
         # Find matching node in graph
-        match = None
-        for node in G.nodes:
-            if node == old_name or node.replace(" ", "") == old_name or node.replace("'", "") == old_name:
-                match = node
-                break
+        match = node_lookup.get(normalize_name_key(old_name))
         if not match:
             continue
 
         for friend in data.get("friends", []):
             # Find friend node
-            for node in G.nodes:
-                if node == friend or node.replace(" ", "") == friend or node.replace("'", "") == friend:
-                    if not G.has_edge(match, node):
-                        G.add_edge(match, node, relation="friend")
-                    break
+            node = node_lookup.get(normalize_name_key(friend))
+            if node and node != match and not G.has_edge(match, node):
+                G.add_edge(match, node, relation="friend")
 
         for rival in data.get("rivals", []):
-            for node in G.nodes:
-                if node == rival or node.replace(" ", "") == rival or node.replace("'", "") == rival:
-                    if not G.has_edge(match, node):
-                        G.add_edge(match, node, relation="rival")
-                    break
-
-    # Remove isolated nodes for cleaner visualization
-    isolates = list(nx.isolates(G))
-    G.remove_nodes_from(isolates)
+            node = node_lookup.get(normalize_name_key(rival))
+            if node and node != match and not G.has_edge(match, node):
+                G.add_edge(match, node, relation="rival")
 
     return G
 
 
 def detect_communities(G):
     """Run Louvain community detection."""
-    communities = nx.community.louvain_communities(G, seed=42)
+    isolates = list(nx.isolates(G))
+    graph_for_detection = G.copy()
+    graph_for_detection.remove_nodes_from(isolates)
+
+    if graph_for_detection.number_of_nodes() == 0:
+        communities = []
+    elif hasattr(nx.community, "louvain_communities"):
+        communities = nx.community.louvain_communities(graph_for_detection, seed=42)
+    else:
+        communities = list(nx.community.greedy_modularity_communities(graph_for_detection))
+
+    communities = [set(comm) for comm in communities]
+    for node in isolates:
+        communities.append({node})
+
     # Convert to node -> community_id mapping
     partition = {}
     for i, comm in enumerate(communities):
@@ -152,7 +204,8 @@ def print_community_report(G, partition, communities):
     print(f"Champions in graph: {G.number_of_nodes()}")
     print(f"Relationships: {G.number_of_edges()}")
     print(f"Communities detected: {len(communities)}")
-    print(f"Modularity: {nx.community.modularity(G, communities):.4f}")
+    modularity = 0 if G.number_of_edges() == 0 else nx.community.modularity(G, communities)
+    print(f"Modularity: {modularity:.4f}")
 
     for i, comm in enumerate(sorted(communities, key=len, reverse=True)):
         # Count factions in this community
@@ -174,23 +227,33 @@ def champion_to_image_filename(name):
     """Convert a champion display name to its image filename."""
     # Special cases mapping
     special = {
+        "Ambessa": "ambessa",
+        "Akshan": "akshan",
+        "Bel'Veth": "belveth",
         "Nunu & Willump": "nunu",
         "Dr. Mundo": "drmundo",
         "Cho'Gath": "chogath",
+        "Hwei": "hwei",
+        "K'Sante": "ksante",
         "Kha'Zix": "khazix",
         "Kog'Maw": "kogmaw",
         "Rek'Sai": "reksai",
         "Vel'Koz": "velkoz",
-        "Kai'sa": "kaisa",
+        "Kai'Sa": "kaisa",
         "Xin Zhao": "xinzhao",
         "Jarvan IV": "jarvaniv",
         "Lee Sin": "leesin",
+        "Mel": "mel",
         "Miss Fortune": "missfortune",
         "Master Yi": "masteryi",
+        "Nilah": "nilah",
+        "Renata Glasc": "renataglasc",
+        "Smolder": "smolder",
         "Twisted Fate": "twistedfate",
         "Tahm Kench": "tahmkench",
         "Aurelion Sol": "aurelionsol",
         "LeBlanc": "leblanc",
+        "Viego": "viego",
     }
     if name in special:
         return special[name] + ".png"
@@ -202,6 +265,7 @@ IMG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "R_analysis",
 
 def build_interactive_viz(G, partition, communities, output_path="templates/network.html"):
     """Create an interactive visualization with filter controls, embedded directly (no iframe)."""
+    output_dir = os.path.dirname(os.path.abspath(output_path)) or os.getcwd()
 
     # Build node and edge data as JSON for vis.js
     nodes_data = []
@@ -227,9 +291,12 @@ def build_interactive_viz(G, partition, communities, output_path="templates/netw
         }
 
         if has_image:
+            img_url = os.path.relpath(img_path, output_dir).replace(os.sep, "/")
             node_obj.update({
                 "shape": "circularImage",
-                "image": f"/img/{img_file}",
+                "image": img_url,
+                "fileImage": img_url,
+                "serverImage": f"/img/{img_file}",
                 "size": 25 + degree * 2,
                 "borderWidth": 3,
                 "color": {"border": color, "highlight": {"border": "#ffffff"}},
@@ -465,6 +532,11 @@ def build_interactive_viz(G, partition, communities, output_path="templates/netw
         // Full graph data
         var allNodes = {nodes_json};
         var allEdges = {edges_json};
+        allNodes.forEach(function(n) {{
+            if (n.fileImage && n.serverImage) {{
+                n.image = window.location.protocol === "file:" ? n.fileImage : n.serverImage;
+            }}
+        }});
 
         // Track hidden items
         var hiddenChampions = new Set();
