@@ -15,7 +15,7 @@ pip install -r requirements.txt
 python server.py
 ```
 
-Visit `http://127.0.0.1:5001/`. Compare the [previous graph](https://sserrot.github.io/champion_relationships/previous.html) on the public site, or use `/previous` locally. The earlier R analysis report remains available at `/report`.
+Visit `http://127.0.0.1:5001/`. Compare the [previous graph](https://sserrot.github.io/champion_relationships/demo/previous.html) on the public site, or use `/previous` locally. The earlier R analysis report remains available at `/report`.
 
 ## Read the graph carefully
 
