@@ -7,75 +7,110 @@
       "Runeterra"
     ],
     "related": [
-      "kayn",
-      "varus",
-      "tryndamere"
+      "Kayn",
+      "Varus",
+      "Tryndamere"
     ],
     "race": [
-      ""
+      "Darkin"
     ],
     "role": [
-      ""
-    ]
+      "Fighter",
+      "Tank"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/aatrox/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/aatrox/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "unaffiliated",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Ahri"
     ],
     "region": [
-      "Runeterra"
+      "Ionia"
     ],
     "related": [
-      "yasuo",
-      "lillia",
-      "monkeyking"
+      "Yasuo",
+      "Lillia",
+      "Wukong"
     ],
     "race": [
-      ""
+      "Vastaya"
     ],
     "role": [
-      ""
-    ]
+      "Mage",
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/ahri/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/ahri/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ionia",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Akali"
     ],
     "region": [
-      "Runeterra"
+      "Ionia"
     ],
     "related": [
-      "kennen",
-      "shen",
-      "zed",
-      "jhin"
+      "Kennen",
+      "Shen",
+      "Zed",
+      "Jhin"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/akali/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/akali/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ionia",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Akshan"
     ],
     "region": [
-      "Runeterra"
+      "Shurima"
     ],
     "related": [
-      "lucian",
-      "senna",
-      "viego",
-      "gwen"
+      "Lucian",
+      "Senna",
+      "Viego",
+      "Gwen"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Marksman",
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/akshan/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/akshan/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "shurima",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
@@ -85,111 +120,351 @@
       "Runeterra"
     ],
     "related": [
-      "xinzhao"
+      "Xin Zhao"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Tank",
+      "Support"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/alistar/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/alistar/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "unaffiliated",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Ambessa"
     ],
     "region": [
-      "Runeterra"
+      "Noxus"
     ],
     "related": [
-      "mel",
-      "caitlyn",
-      "leblanc"
+      "Mel",
+      "Caitlyn",
+      "LeBlanc"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/ambessa/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/ambessa/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "noxus",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Amumu"
+    ],
+    "region": [
+      "Shurima"
+    ],
+    "related": [],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Tank",
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/amumu/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/amumu/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "shurima",
+      "related_status": "verified_empty"
+    }
   },
   {
     "champion_name": [
       "Anivia"
     ],
     "region": [
-      "Runeterra"
+      "Freljord"
     ],
     "related": [
-      "ornn",
-      "volibear",
-      "ashe",
-      "nunu"
+      "Ornn",
+      "Volibear",
+      "Ashe",
+      "Nunu & Willump"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Mage",
+      "Support"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/anivia/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/anivia/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "freljord",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Annie"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/annie/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/annie/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "unaffiliated",
+      "related_status": "verified_empty"
+    }
   },
   {
     "champion_name": [
       "Aphelios"
     ],
     "region": [
-      "Runeterra"
+      "Targon"
     ],
     "related": [
-      "diana",
-      "leona"
+      "Diana",
+      "Leona"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Marksman",
+      "Tank"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/aphelios/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/aphelios/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "mount-targon",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Ashe"
+    ],
+    "region": [
+      "Freljord"
+    ],
+    "related": [
+      "Sejuani",
+      "Tryndamere",
+      "Braum",
+      "Lissandra"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Marksman",
+      "Support"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/ashe/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/ashe/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "freljord",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Aurelion Sol"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "Soraka",
+      "Leona",
+      "Diana"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      "Mage",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/aurelionsol/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/aurelionsol/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "unaffiliated",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Aurora"
     ],
     "region": [
-      "Runeterra"
+      "Freljord"
     ],
     "related": [
-      "ornn",
-      "udyr",
-      "anivia",
-      "volibear"
+      "Ornn",
+      "Udyr",
+      "Anivia",
+      "Volibear"
+    ],
+    "race": [
+      "Vastaya"
+    ],
+    "role": [
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/aurora/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/aurora/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "freljord",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Azir"
+    ],
+    "region": [
+      "Shurima"
+    ],
+    "related": [
+      "Nasus",
+      "Sivir",
+      "Xerath",
+      "Renekton",
+      "Taliyah",
+      "Cassiopeia"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Mage",
+      "Marksman"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/azir/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/azir/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "shurima",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Bard"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "Aurelion Sol",
+      "Ryze"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Support",
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/bard/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/bard/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "unaffiliated",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Bel'Veth"
     ],
     "region": [
-      "Runeterra"
+      "The Void"
     ],
     "related": [
-      "kaisa",
-      "lissandra",
-      "malzahar",
-      "velkoz"
+      "Kai'Sa",
+      "Lissandra",
+      "Malzahar",
+      "Vel'Koz"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/belveth/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/belveth/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "void",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Blitzcrank"
+    ],
+    "region": [
+      "Zaun"
+    ],
+    "related": [
+      "Orianna",
+      "Viktor"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Tank",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/blitzcrank/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/blitzcrank/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "zaun",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
@@ -199,158 +474,396 @@
       "Runeterra"
     ],
     "related": [
-      "ryze",
-      "anivia",
-      "lissandra",
-      "nasus",
-      "renekton",
-      "xerath"
+      "Ryze",
+      "Anivia",
+      "Lissandra",
+      "Nasus",
+      "Renekton",
+      "Xerath"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/brand/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/brand/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "unaffiliated",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Braum"
+    ],
+    "region": [
+      "Freljord"
+    ],
+    "related": [
+      "Ashe",
+      "Tryndamere",
+      "Lissandra",
+      "Ornn"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Support",
+      "Tank"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/braum/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/braum/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "freljord",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Briar"
     ],
     "region": [
-      "Runeterra"
+      "Noxus"
     ],
     "related": [
-      "sion",
-      "swain",
-      "talon",
-      "vladimir"
+      "Sion",
+      "Swain",
+      "Talon",
+      "Vladimir"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/briar/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/briar/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "noxus",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Caitlyn"
     ],
     "region": [
-      "Runeterra"
+      "Piltover"
     ],
     "related": [
-      "vi",
-      "jinx"
+      "Vi",
+      "Jinx"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Marksman"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/caitlyn/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/caitlyn/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "piltover",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Camille"
     ],
     "region": [
-      "Runeterra"
+      "Piltover"
     ],
     "related": [
-      "caitlyn",
-      "ezreal",
-      "jayce",
-      "viktor",
-      "vi",
-      "ekko",
-      "orianna",
-      "warwick"
+      "Caitlyn",
+      "Ezreal",
+      "Jayce",
+      "Viktor",
+      "Vi",
+      "Ekko",
+      "Orianna",
+      "Warwick"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/camille/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/camille/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "piltover",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Cassiopeia"
     ],
     "region": [
-      "Runeterra"
+      "Noxus"
     ],
     "related": [
-      "katarina",
-      "renekton",
-      "nasus",
-      "xerath",
-      "sivir",
-      "azir",
-      "talon"
+      "Katarina",
+      "Renekton",
+      "Nasus",
+      "Xerath",
+      "Sivir",
+      "Azir",
+      "Talon"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/cassiopeia/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/cassiopeia/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "noxus",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Cho'Gath"
     ],
     "region": [
-      "Runeterra"
+      "The Void"
     ],
     "related": [
-      "kogmaw",
-      "khazix",
-      "velkoz"
+      "Kog'Maw",
+      "Kha'Zix",
+      "Vel'Koz"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Tank",
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/chogath/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/chogath/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "void",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Corki"
     ],
     "region": [
-      "Runeterra"
+      "Bandle City"
     ],
     "related": [
-      "heimerdinger",
-      "veigar"
+      "Heimerdinger",
+      "Veigar"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Marksman"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/corki/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/corki/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "bandle-city",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Darius"
+    ],
+    "region": [
+      "Noxus"
+    ],
+    "related": [
+      "Draven",
+      "Katarina",
+      "Swain",
+      "Vladimir"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Fighter",
+      "Tank"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/darius/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/darius/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "noxus",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Diana"
+    ],
+    "region": [
+      "Targon"
+    ],
+    "related": [
+      "Leona",
+      "Taric",
+      "Zoe",
+      "Pantheon"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      "Fighter",
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/diana/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/diana/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "mount-targon",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Dr. Mundo"
     ],
     "region": [
-      "Runeterra"
+      "Zaun"
     ],
     "related": [
-      "ekko"
+      "Ekko"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Fighter",
+      "Tank"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/drmundo/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/drmundo/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "zaun",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Draven"
+    ],
+    "region": [
+      "Noxus"
+    ],
+    "related": [
+      "Darius",
+      "Swain"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Marksman"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/draven/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/draven/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "noxus",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Ekko"
+    ],
+    "region": [
+      "Zaun"
+    ],
+    "related": [
+      "Jinx",
+      "Camille",
+      "Vi",
+      "Viktor",
+      "Caitlyn",
+      "Jayce",
+      "Janna"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      "Assassin",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/ekko/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/ekko/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "zaun",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Elise"
+    ],
+    "region": [
+      "Shadow Isles"
+    ],
+    "related": [
+      "LeBlanc",
+      "Vladimir"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      "Mage",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/elise/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/elise/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "shadow-isles",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
@@ -360,1042 +873,2661 @@
       "Runeterra"
     ],
     "related": [
-      "vayne",
-      "tahmkench",
-      "ryze"
+      "Vayne",
+      "Tahm Kench",
+      "Ryze"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Assassin",
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/evelynn/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/evelynn/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "unaffiliated",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Ezreal"
     ],
     "region": [
-      "Runeterra"
+      "Piltover"
     ],
     "related": [
-      "kassadin",
-      "lux",
-      "reksai"
+      "Kassadin",
+      "Lux",
+      "Rek'Sai"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Marksman",
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/ezreal/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/ezreal/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "piltover",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Fiddlesticks"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "Nocturne",
+      "Shaco"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Mage",
+      "Support"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/fiddlesticks/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/fiddlesticks/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "unaffiliated",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Fiora"
     ],
     "region": [
-      "Runeterra"
+      "Demacia"
     ],
     "related": [
-      "jarvaniv",
-      "garen",
-      "jax"
+      "Jarvan IV",
+      "Garen",
+      "Jax"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Fighter",
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/fiora/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/fiora/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "demacia",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Fizz"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "Illaoi",
+      "Nami",
+      "Nautilus"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Assassin",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/fizz/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/fizz/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "unaffiliated",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Galio"
     ],
     "region": [
-      "Runeterra"
+      "Demacia"
     ],
     "related": [
-      "kayle",
-      "morgana",
-      "lux",
-      "sylas"
+      "Kayle",
+      "Morgana",
+      "Lux",
+      "Sylas"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Tank",
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/galio/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/galio/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "demacia",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Gangplank"
+    ],
+    "region": [
+      "Bilgewater"
+    ],
+    "related": [
+      "Miss Fortune",
+      "Swain",
+      "Zed",
+      "Illaoi",
+      "Twisted Fate",
+      "Graves"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/gangplank/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/gangplank/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "bilgewater",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Garen"
+    ],
+    "region": [
+      "Demacia"
+    ],
+    "related": [
+      "Lux",
+      "Jarvan IV",
+      "Quinn"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      "Fighter",
+      "Tank"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/garen/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/garen/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "demacia",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Gnar"
+    ],
+    "region": [
+      "Freljord"
+    ],
+    "related": [
+      "Nunu & Willump",
+      "Rengar"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      "Fighter",
+      "Tank"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/gnar/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/gnar/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "freljord",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Gragas"
     ],
     "region": [
-      "Runeterra"
+      "Freljord"
     ],
     "related": [
-      "tryndamere",
-      "braum",
-      "jax",
-      "ashe"
+      "Tryndamere",
+      "Braum",
+      "Jax",
+      "Ashe"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Fighter",
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/gragas/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/gragas/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "freljord",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Graves"
+    ],
+    "region": [
+      "Bilgewater"
+    ],
+    "related": [
+      "Twisted Fate",
+      "Gangplank",
+      "Miss Fortune"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Marksman"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/graves/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/graves/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "bilgewater",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Gwen"
     ],
     "region": [
-      "Runeterra"
+      "Shadow Isles"
     ],
     "related": [
-      "viego",
-      "senna",
-      "yorick"
+      "Viego",
+      "Senna",
+      "Yorick"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/gwen/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/gwen/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "shadow-isles",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Hecarim"
+    ],
+    "region": [
+      "Shadow Isles"
+    ],
+    "related": [
+      "Kalista",
+      "Thresh",
+      "Yorick"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Fighter",
+      "Tank"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/hecarim/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/hecarim/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "shadow-isles",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Heimerdinger"
     ],
     "region": [
-      "Runeterra"
+      "Piltover"
     ],
     "related": [
-      "corki",
-      "gnar",
-      "ziggs",
-      "rumble",
-      "veigar"
+      "Corki",
+      "Gnar",
+      "Ziggs",
+      "Rumble",
+      "Veigar"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Mage",
+      "Support"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/heimerdinger/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/heimerdinger/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "piltover",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Hwei"
     ],
     "region": [
-      "Runeterra"
+      "Ionia"
     ],
     "related": [
-      "jhin",
-      "shen",
-      "zed"
+      "Jhin",
+      "Shen",
+      "Zed"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/hwei/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/hwei/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ionia",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Illaoi"
+    ],
+    "region": [
+      "Bilgewater"
+    ],
+    "related": [
+      "Gangplank",
+      "Miss Fortune",
+      "Hecarim"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Fighter",
+      "Tank"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/illaoi/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/illaoi/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "bilgewater",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Irelia"
     ],
     "region": [
-      "Runeterra"
+      "Ionia"
     ],
     "related": [
-      "karma",
-      "swain"
+      "Karma",
+      "Swain"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Fighter",
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/irelia/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/irelia/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ionia",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Ivern"
+    ],
+    "region": [
+      "Ionia"
+    ],
+    "related": [
+      "Lillia"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Support",
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/ivern/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/ivern/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ionia",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Janna"
     ],
     "region": [
-      "Runeterra"
+      "Zaun"
     ],
     "related": [
-      "ekko",
-      "jinx",
-      "vi",
-      "urgot"
+      "Ekko",
+      "Jinx",
+      "Vi",
+      "Urgot"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Support",
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/janna/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/janna/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "zaun",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Jarvan IV"
     ],
     "region": [
-      "Runeterra"
+      "Demacia"
     ],
     "related": [
-      "garen",
-      "shyvana",
-      "xinzhao",
-      "lux"
+      "Garen",
+      "Shyvana",
+      "Xin Zhao",
+      "Lux"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Tank",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/jarvaniv/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/jarvaniv/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "demacia",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Jax"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "Aatrox",
+      "Fiora",
+      "Kassadin",
+      "Zilean"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Fighter",
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/jax/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/jax/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "unaffiliated",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Jayce"
+    ],
+    "region": [
+      "Piltover"
+    ],
+    "related": [
+      "Ezreal",
+      "Camille",
+      "Caitlyn",
+      "Vi",
+      "Viktor",
+      "Skarner"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      "Fighter",
+      "Marksman"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/jayce/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/jayce/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "piltover",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Jhin"
+    ],
+    "region": [
+      "Ionia"
+    ],
+    "related": [
+      "Shen",
+      "Zed",
+      "Akali",
+      "Hwei"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      "Marksman",
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/jhin/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/jhin/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ionia",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Jinx"
+    ],
+    "region": [
+      "Zaun"
+    ],
+    "related": [
+      "Caitlyn",
+      "Vi",
+      "Ekko"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      "Marksman"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/jinx/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/jinx/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "zaun",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "K'Sante"
     ],
     "region": [
-      "Runeterra"
+      "Shurima"
     ],
     "related": [
-      "azir",
-      "renekton",
-      "xerath"
+      "Azir",
+      "Renekton",
+      "Xerath"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Tank"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/ksante/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/ksante/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "shurima",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Kai'Sa"
     ],
     "region": [
-      "Runeterra"
+      "The Void"
     ],
     "related": [
-      "malzahar"
+      "Malzahar"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Marksman"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/kaisa/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/kaisa/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "void",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Kalista"
+    ],
+    "region": [
+      "Shadow Isles"
+    ],
+    "related": [
+      "Hecarim",
+      "Thresh",
+      "Yorick"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Marksman"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/kalista/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/kalista/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "shadow-isles",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Karma"
     ],
     "region": [
-      "Runeterra"
+      "Ionia"
     ],
     "related": [
-      "irelia",
-      "leesin"
+      "Irelia",
+      "Lee Sin"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Mage",
+      "Support"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/karma/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/karma/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ionia",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Karthus"
     ],
     "region": [
-      "Runeterra"
+      "Shadow Isles"
     ],
     "related": [
-      "mordekaiser",
-      "thresh",
-      "yorick",
-      "soraka",
-      "kindred"
+      "Mordekaiser",
+      "Thresh",
+      "Yorick",
+      "Soraka",
+      "Kindred"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/karthus/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/karthus/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "shadow-isles",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Kassadin"
     ],
     "region": [
-      "Runeterra"
+      "The Void"
     ],
     "related": [
-      "malzahar",
-      "ezreal"
+      "Malzahar",
+      "Ezreal"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Assassin",
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/kassadin/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/kassadin/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "void",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Katarina"
     ],
     "region": [
-      "Runeterra"
+      "Noxus"
     ],
     "related": [
-      "cassiopeia",
-      "sion",
-      "talon",
-      "garen",
-      "swain",
-      "darius"
+      "Cassiopeia",
+      "Sion",
+      "Talon",
+      "Garen",
+      "Swain",
+      "Darius"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Assassin",
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/katarina/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/katarina/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "noxus",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Kayle"
     ],
     "region": [
-      "Runeterra"
+      "Demacia"
     ],
     "related": [
-      "galio",
-      "morgana",
-      "taric"
+      "Galio",
+      "Morgana",
+      "Taric"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Fighter",
+      "Support"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/kayle/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/kayle/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "demacia",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Kayn"
     ],
     "region": [
-      "Runeterra"
+      "Ionia"
     ],
     "related": [
-      "aatrox",
-      "varus",
-      "zed",
-      "darius"
+      "Aatrox",
+      "Varus",
+      "Zed",
+      "Darius"
     ],
     "race": [
-      ""
+      "Darkin"
     ],
     "role": [
-      ""
-    ]
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/kayn/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/kayn/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ionia",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Kennen"
     ],
     "region": [
-      "Runeterra"
+      "Ionia"
     ],
     "related": [
-      "akali",
-      "shen",
-      "zed"
+      "Akali",
+      "Shen",
+      "Zed"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Mage",
+      "Marksman"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/kennen/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/kennen/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ionia",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Kha'Zix"
+    ],
+    "region": [
+      "The Void"
+    ],
+    "related": [
+      "Cho'Gath",
+      "Kog'Maw",
+      "Rengar",
+      "Vel'Koz"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Assassin",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/khazix/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/khazix/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "void",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Kindred"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "Karthus",
+      "Mordekaiser",
+      "Yorick"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      "Marksman"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/kindred/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/kindred/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "unaffiliated",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Kled"
+    ],
+    "region": [
+      "Noxus"
+    ],
+    "related": [
+      "Swain",
+      "Darius",
+      "Tristana",
+      "Elise"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      "Fighter",
+      "Tank"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/kled/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/kled/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "noxus",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Kog'Maw"
     ],
     "region": [
-      "Runeterra"
+      "The Void"
     ],
     "related": [
-      "malzahar",
-      "khazix",
-      "chogath",
-      "velkoz"
+      "Malzahar",
+      "Kha'Zix",
+      "Cho'Gath",
+      "Vel'Koz"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Marksman",
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/kogmaw/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/kogmaw/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "void",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "LeBlanc"
     ],
     "region": [
-      "Runeterra"
+      "Noxus"
     ],
     "related": [
-      "vladimir",
-      "mel",
-      "mordekaiser"
+      "Vladimir",
+      "Mel",
+      "Mordekaiser"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Assassin",
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/leblanc/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/leblanc/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "noxus",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Lee Sin"
     ],
     "region": [
-      "Runeterra"
+      "Ionia"
     ],
     "related": [
-      "karma",
-      "udyr"
+      "Karma",
+      "Udyr"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Fighter",
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/leesin/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/leesin/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ionia",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Leona"
+    ],
+    "region": [
+      "Targon"
+    ],
+    "related": [
+      "Diana",
+      "Taric",
+      "Aurelion Sol",
+      "Pantheon"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Tank",
+      "Support"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/leona/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/leona/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "mount-targon",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Lillia"
     ],
     "region": [
-      "Runeterra"
+      "Ionia"
     ],
     "related": [
-      "ivern",
-      "ahri",
-      "yasuo"
+      "Ivern",
+      "Ahri",
+      "Yasuo"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/lillia/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/lillia/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ionia",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Lissandra"
+    ],
+    "region": [
+      "Freljord"
+    ],
+    "related": [
+      "Ashe",
+      "Sejuani",
+      "Nunu & Willump"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/lissandra/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/lissandra/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "freljord",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Locke"
+    ],
+    "region": [
+      "Demacia"
+    ],
+    "related": [
+      "Vayne",
+      "Evelynn",
+      "Morgana"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/locke/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/locke/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "demacia",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Lucian"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "Thresh",
+      "Miss Fortune",
+      "Olaf",
+      "Hecarim"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      "Marksman"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/lucian/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/lucian/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "unaffiliated",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Lulu"
+    ],
+    "region": [
+      "Bandle City"
+    ],
+    "related": [
+      "Veigar",
+      "Gnar"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      "Support",
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/lulu/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/lulu/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "bandle-city",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Lux"
+    ],
+    "region": [
+      "Demacia"
+    ],
+    "related": [
+      "Garen",
+      "Jarvan IV",
+      "Galio"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      "Mage",
+      "Support"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/lux/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/lux/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "demacia",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Malphite"
     ],
     "region": [
-      "Runeterra"
+      "Ixtal"
     ],
     "related": [
-      "ezreal",
-      "kassadin",
-      "qiyana",
-      "taliyah"
+      "Ezreal",
+      "Kassadin",
+      "Qiyana",
+      "Taliyah"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Tank",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/malphite/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/malphite/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ixtal",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Malzahar"
     ],
     "region": [
-      "Runeterra"
+      "The Void"
     ],
     "related": [
-      "kassadin",
-      "kaisa"
+      "Kassadin",
+      "Kai'Sa"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Mage",
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/malzahar/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/malzahar/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "void",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Maokai"
     ],
     "region": [
-      "Runeterra"
+      "Shadow Isles"
     ],
     "related": [
-      "malphite",
-      "zyra",
-      "yorick"
+      "Malphite",
+      "Zyra",
+      "Yorick"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Tank",
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/maokai/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/maokai/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "shadow-isles",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Master Yi"
     ],
     "region": [
-      "Runeterra"
+      "Ionia"
     ],
     "related": [
-      "monkeyking",
-      "singed"
+      "Wukong",
+      "Singed"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Assassin",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/masteryi/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/masteryi/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ionia",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Mel"
     ],
     "region": [
-      "Runeterra"
+      "Noxus"
     ],
     "related": [
-      "ambessa",
-      "jayce",
-      "leblanc"
+      "Ambessa",
+      "Jayce",
+      "LeBlanc"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/mel/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/mel/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "noxus",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Milio"
     ],
     "region": [
-      "Runeterra"
+      "Ixtal"
     ],
     "related": [
-      "neeko",
-      "nidalee",
-      "qiyana"
+      "Neeko",
+      "Nidalee",
+      "Qiyana"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Support"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/milio/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/milio/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ixtal",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Miss Fortune"
+    ],
+    "region": [
+      "Bilgewater"
+    ],
+    "related": [
+      "Gangplank",
+      "Illaoi",
+      "Twisted Fate",
+      "Graves",
+      "Lucian",
+      "Olaf",
+      "Hecarim",
+      "Ryze"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Marksman"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/missfortune/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/missfortune/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "bilgewater",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Mordekaiser"
     ],
     "region": [
-      "Runeterra"
+      "Noxus"
     ],
     "related": [
-      "leblanc",
-      "veigar",
-      "vladimir"
+      "LeBlanc",
+      "Veigar",
+      "Vladimir"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/mordekaiser/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/mordekaiser/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "noxus",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Morgana"
     ],
     "region": [
-      "Runeterra"
+      "Demacia"
     ],
     "related": [
-      "kayle",
-      "galio",
-      "taric"
+      "Kayle",
+      "Galio",
+      "Taric"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Mage",
+      "Support"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/morgana/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/morgana/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "demacia",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Naafiri"
+    ],
+    "region": [
+      "Shurima"
+    ],
+    "related": [
+      "Aatrox",
+      "Kayn",
+      "Varus"
+    ],
+    "race": [
+      "Darkin"
+    ],
+    "role": [
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/naafiri/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/naafiri/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "shurima",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Nami"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "Fizz",
+      "Nautilus"
+    ],
+    "race": [
+      "Vastaya"
+    ],
+    "role": [
+      "Support",
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/nami/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/nami/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "unaffiliated",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Nasus"
     ],
     "region": [
-      "Runeterra"
+      "Shurima"
     ],
     "related": [
-      "renekton",
-      "azir",
-      "xerath",
-      "sivir"
+      "Renekton",
+      "Azir",
+      "Xerath",
+      "Sivir"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Fighter",
+      "Tank"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/nasus/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/nasus/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "shurima",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Nautilus"
+    ],
+    "region": [
+      "Bilgewater"
+    ],
+    "related": [
+      "Fizz",
+      "Illaoi",
+      "Nami",
+      "Tahm Kench"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Tank",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/nautilus/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/nautilus/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "bilgewater",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Neeko"
     ],
     "region": [
-      "Runeterra"
+      "Ixtal"
     ],
     "related": [
-      "nidalee",
-      "rengar",
-      "ezreal"
+      "Nidalee",
+      "Rengar",
+      "Ezreal"
     ],
     "race": [
-      ""
+      "Vastaya"
     ],
     "role": [
-      ""
-    ]
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/neeko/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/neeko/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ixtal",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Nidalee"
     ],
     "region": [
-      "Runeterra"
+      "Ixtal"
     ],
     "related": [
-      "neeko",
-      "rengar"
+      "Neeko",
+      "Rengar"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Assassin",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/nidalee/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/nidalee/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ixtal",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Nilah"
     ],
     "region": [
-      "Runeterra"
+      "Bilgewater"
     ],
     "related": [
-      "graves",
-      "illaoi",
-      "viego",
-      "fiddlesticks"
+      "Graves",
+      "Illaoi",
+      "Viego",
+      "Fiddlesticks"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Marksman"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/nilah/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/nilah/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "bilgewater",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Nocturne"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "Evelynn",
+      "Tahm Kench",
+      "Zed"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Assassin",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/nocturne/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/nocturne/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "unaffiliated",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Norra"
+    ],
+    "region": [
+      "Bandle City"
+    ],
+    "related": [
+      "Yuumi"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/norra/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/norra/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "bandle-city",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Nunu & Willump"
     ],
     "region": [
-      "Runeterra"
+      "Freljord"
     ],
     "related": [
-      "lissandra",
-      "anivia"
+      "Lissandra",
+      "Anivia"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Tank",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/nunu/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/nunu/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "freljord",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Olaf"
     ],
     "region": [
-      "Runeterra"
+      "Freljord"
     ],
     "related": [
-      "sejuani",
-      "volibear",
-      "missfortune",
-      "lucian"
+      "Sejuani",
+      "Volibear",
+      "Miss Fortune",
+      "Lucian"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Fighter",
+      "Tank"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/olaf/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/olaf/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "freljord",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Orianna"
     ],
     "region": [
-      "Runeterra"
+      "Piltover"
     ],
     "related": [
-      "blitzcrank",
-      "camille",
-      "skarner"
+      "Blitzcrank",
+      "Camille",
+      "Skarner"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Mage",
+      "Support"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/orianna/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/orianna/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "piltover",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Ornn"
     ],
     "region": [
-      "Runeterra"
+      "Freljord"
     ],
     "related": [
-      "volibear",
-      "anivia",
-      "braum"
+      "Volibear",
+      "Anivia",
+      "Braum"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Tank",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/ornn/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/ornn/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "freljord",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Pantheon"
     ],
     "region": [
-      "Runeterra"
+      "Targon"
     ],
     "related": [
-      "aatrox",
-      "aurelionsol",
-      "leona"
+      "Aatrox",
+      "Aurelion Sol",
+      "Leona"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Fighter",
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/pantheon/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/pantheon/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "mount-targon",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Poppy"
+    ],
+    "region": [
+      "Demacia"
+    ],
+    "related": [
+      "Galio",
+      "Shyvana"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Tank",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/poppy/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/poppy/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "demacia",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Pyke"
+    ],
+    "region": [
+      "Bilgewater"
+    ],
+    "related": [
+      "Gangplank",
+      "Miss Fortune"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      "Support"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/pyke/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/pyke/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "bilgewater",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Qiyana"
     ],
     "region": [
-      "Runeterra"
+      "Ixtal"
     ],
     "related": [
-      "malphite",
-      "rengar",
-      "zyra"
+      "Malphite",
+      "Rengar",
+      "Zyra"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/qiyana/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/qiyana/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ixtal",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Quinn"
+    ],
+    "region": [
+      "Demacia"
+    ],
+    "related": [
+      "Jarvan IV",
+      "Garen",
+      "Sona"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Marksman",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/quinn/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/quinn/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "demacia",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Rakan"
+    ],
+    "region": [
+      "Ionia"
+    ],
+    "related": [
+      "Xayah",
+      "Zed"
+    ],
+    "race": [
+      "Vastaya"
+    ],
+    "role": [
+      "Support",
+      "Tank"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/rakan/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/rakan/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ionia",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Rammus"
     ],
     "region": [
-      "Runeterra"
+      "Shurima"
+    ],
+    "related": [],
+    "race": [
+      ""
+    ],
+    "role": [
+      "Tank",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/rammus/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/rammus/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "shurima",
+      "related_status": "verified_empty"
+    }
+  },
+  {
+    "champion_name": [
+      "Rek'Sai"
+    ],
+    "region": [
+      "The Void"
     ],
     "related": [
-      ""
+      "Skarner"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/reksai/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/reksai/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "void",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Rell"
     ],
     "region": [
-      "Runeterra"
+      "Noxus"
     ],
     "related": [
-      "leblanc",
-      "samira"
+      "LeBlanc",
+      "Samira"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Support"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/rell/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/rell/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "noxus",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Renata Glasc"
     ],
     "region": [
-      "Runeterra"
+      "Zaun"
     ],
     "related": [
-      ""
+      "Camille",
+      "Ekko",
+      "Viktor",
+      "Zeri"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Support"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/renataglasc/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/renataglasc/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "zaun",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Renekton"
     ],
     "region": [
-      "Runeterra"
+      "Shurima"
     ],
     "related": [
-      "nasus",
-      "azir",
-      "xerath",
-      "sivir"
+      "Nasus",
+      "Azir",
+      "Xerath",
+      "Sivir"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Fighter",
+      "Tank"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/renekton/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/renekton/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "shurima",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Rengar"
+    ],
+    "region": [
+      "Ixtal"
+    ],
+    "related": [
+      "Kha'Zix",
+      "Nidalee",
+      "Gnar"
+    ],
+    "race": [
+      "Vastaya"
+    ],
+    "role": [
+      "Assassin",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/rengar/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/rengar/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ixtal",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Riven"
     ],
     "region": [
-      "Runeterra"
+      "Noxus"
     ],
     "related": [
-      "leblanc",
-      "yasuo"
+      "LeBlanc",
+      "Yasuo"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Fighter",
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/riven/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/riven/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "noxus",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Rumble"
     ],
     "region": [
-      "Runeterra"
+      "Bandle City"
     ],
     "related": [
-      "tristana",
-      "ziggs",
-      "heimerdinger",
-      "teemo",
-      "veigar"
+      "Tristana",
+      "Ziggs",
+      "Heimerdinger",
+      "Teemo",
+      "Veigar"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Fighter",
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/rumble/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/rumble/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "bandle-city",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Ryze"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "Brand",
+      "Miss Fortune",
+      "Trundle",
+      "Sona",
+      "Nasus",
+      "Galio",
+      "Malzahar"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Mage",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/ryze/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/ryze/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "unaffiliated",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Samira"
     ],
     "region": [
-      "Runeterra"
+      "Noxus"
     ],
     "related": [
-      "darius",
-      "leblanc"
+      "Darius",
+      "LeBlanc"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Marksman"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/samira/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/samira/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "noxus",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Sejuani"
+    ],
+    "region": [
+      "Freljord"
+    ],
+    "related": [
+      "Ashe",
+      "Lissandra",
+      "Olaf"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Tank",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/sejuani/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/sejuani/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "freljord",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Senna"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "Lucian",
+      "Thresh",
+      "Hecarim"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      "Support",
+      "Marksman"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/senna/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/senna/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "unaffiliated",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Seraphine"
     ],
     "region": [
-      "Runeterra"
+      "Piltover"
     ],
     "related": [
-      "skarner"
+      "Skarner"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/seraphine/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/seraphine/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "piltover",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Sett"
     ],
     "region": [
-      "Runeterra"
+      "Ionia"
     ],
     "related": [
-      "alistar",
-      "draven"
+      "Alistar",
+      "Draven"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/sett/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/sett/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ionia",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Shaco"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "Fiddlesticks",
+      "Nocturne"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/shaco/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/shaco/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "unaffiliated",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Shen"
+    ],
+    "region": [
+      "Ionia"
+    ],
+    "related": [
+      "Kennen",
+      "Akali",
+      "Zed",
+      "Jhin"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      "Tank",
+      "Melee"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/shen/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/shen/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ionia",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Shyvana"
     ],
     "region": [
-      "Runeterra"
+      "Demacia"
     ],
     "related": [
-      "jarvaniv",
-      "xinzhao",
-      "sona"
+      "Jarvan IV",
+      "Quinn",
+      "Sona"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Fighter",
+      "Tank"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/shyvana/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/shyvana/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "demacia",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Singed"
     ],
     "region": [
-      "Runeterra"
+      "Zaun"
     ],
     "related": [
-      "warwick",
-      "riven",
-      "masteryi"
+      "Warwick",
+      "Riven",
+      "Master Yi"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Tank",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/singed/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/singed/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "zaun",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Sion"
+    ],
+    "region": [
+      "Noxus"
+    ],
+    "related": [
+      "Swain",
+      "Jarvan IV",
+      "LeBlanc"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Tank",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/sion/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/sion/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "noxus",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Sivir"
     ],
     "region": [
-      "Runeterra"
+      "Shurima"
     ],
     "related": [
-      "azir",
-      "nasus",
-      "taliyah"
+      "Azir",
+      "Nasus",
+      "Taliyah"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Marksman"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/sivir/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/sivir/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "shurima",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Skarner"
     ],
     "region": [
-      "Runeterra"
+      "Ixtal"
     ],
     "related": [
-      "malphite",
-      "qiyana",
-      "milio"
+      "Malphite",
+      "Qiyana",
+      "Milio"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Tank"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/skarner/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/skarner/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ixtal",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
@@ -1405,460 +3537,1091 @@
       "Runeterra"
     ],
     "related": [
-      "viego",
-      "shyvana",
-      "aurelionsol"
+      "Viego",
+      "Shyvana",
+      "Aurelion Sol"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Marksman"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/smolder/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/smolder/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "unaffiliated",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Sona"
     ],
     "region": [
-      "Runeterra"
+      "Demacia"
     ],
     "related": [
-      "taric",
-      "xinzhao",
-      "ryze"
+      "Taric",
+      "Xin Zhao",
+      "Ryze"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Support",
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/sona/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/sona/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "demacia",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Soraka"
     ],
     "region": [
-      "Runeterra"
+      "Targon"
     ],
     "related": [
-      "aurelionsol",
-      "syndra",
-      "warwick"
+      "Aurelion Sol",
+      "Syndra",
+      "Warwick"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Support",
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/soraka/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/soraka/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "mount-targon",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Swain"
+    ],
+    "region": [
+      "Noxus"
+    ],
+    "related": [
+      "LeBlanc",
+      "Darius",
+      "Katarina",
+      "Draven",
+      "Vladimir"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Mage",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/swain/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/swain/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "noxus",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Sylas"
     ],
     "region": [
-      "Runeterra"
+      "Demacia"
     ],
     "related": [
-      "lux",
-      "galio"
+      "Lux",
+      "Galio"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Mage",
+      "Support"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/sylas/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/sylas/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "demacia",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Syndra"
+    ],
+    "region": [
+      "Ionia"
+    ],
+    "related": [
+      "Irelia",
+      "Karma"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Mage",
+      "Support"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/syndra/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/syndra/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ionia",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Tahm Kench"
+    ],
+    "region": [
+      "Runeterra"
+    ],
+    "related": [
+      "Evelynn",
+      "Fizz",
+      "Nautilus",
+      "Pyke"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      "Support",
+      "Tank"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/tahmkench/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/tahmkench/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "unaffiliated",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Taliyah"
+    ],
+    "region": [
+      "Shurima"
+    ],
+    "related": [
+      "Yasuo",
+      "Azir",
+      "Nasus",
+      "Sivir",
+      "Xerath"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      "Mage",
+      "Support"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/taliyah/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/taliyah/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "shurima",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Talon"
     ],
     "region": [
-      "Runeterra"
+      "Noxus"
     ],
     "related": [
-      "katarina",
-      "quinn",
-      "cassiopeia"
+      "Katarina",
+      "Quinn",
+      "Cassiopeia"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Assassin",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/talon/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/talon/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "noxus",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Taric"
+    ],
+    "region": [
+      "Targon"
+    ],
+    "related": [
+      "Garen",
+      "Leona",
+      "Diana",
+      "Zoe"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Support",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/taric/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/taric/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "mount-targon",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Teemo"
     ],
     "region": [
-      "Runeterra"
+      "Bandle City"
     ],
     "related": [
-      "tristana",
-      "lulu",
-      "corki"
+      "Tristana",
+      "Lulu",
+      "Corki"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Marksman"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/teemo/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/teemo/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "bandle-city",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Thresh"
+    ],
+    "region": [
+      "Shadow Isles"
+    ],
+    "related": [
+      "Hecarim",
+      "Karthus",
+      "Lucian",
+      "Kalista",
+      "Yorick"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Support",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/thresh/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/thresh/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "shadow-isles",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Tristana"
     ],
     "region": [
-      "Runeterra"
+      "Bandle City"
     ],
     "related": [
-      "teemo",
-      "rumble"
+      "Teemo",
+      "Rumble"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Marksman",
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/tristana/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/tristana/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "bandle-city",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Trundle"
     ],
     "region": [
-      "Runeterra"
+      "Freljord"
     ],
     "related": [
-      "lissandra",
-      "ashe",
-      "sejuani",
-      "ryze"
+      "Lissandra",
+      "Ashe",
+      "Sejuani",
+      "Ryze"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Fighter",
+      "Tank"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/trundle/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/trundle/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "freljord",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Tryndamere"
+    ],
+    "region": [
+      "Freljord"
+    ],
+    "related": [
+      "Ashe",
+      "Braum",
+      "Aatrox"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Fighter",
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/tryndamere/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/tryndamere/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "freljord",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Twisted Fate"
+    ],
+    "region": [
+      "Bilgewater"
+    ],
+    "related": [
+      "Graves",
+      "Gangplank",
+      "Miss Fortune"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/twistedfate/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/twistedfate/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "bilgewater",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Twitch"
     ],
     "region": [
-      "Runeterra"
+      "Zaun"
     ],
     "related": [
-      "zac"
+      "Zac"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Marksman",
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/twitch/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/twitch/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "zaun",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Udyr"
     ],
     "region": [
-      "Runeterra"
+      "Freljord"
     ],
     "related": [
-      "leesin",
-      "sejuani",
-      "volibear"
+      "Lee Sin",
+      "Sejuani",
+      "Volibear"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/udyr/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/udyr/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "freljord",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Urgot"
     ],
     "region": [
-      "Runeterra"
+      "Zaun"
     ],
     "related": [
-      "swain",
-      "ekko",
-      "camille",
-      "darius"
+      "Swain",
+      "Ekko",
+      "Camille",
+      "Darius"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Fighter",
+      "Juggernaut"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/urgot/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/urgot/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "zaun",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Varus"
+    ],
+    "region": [
+      "Ionia"
+    ],
+    "related": [
+      "Aatrox",
+      "Kayn"
+    ],
+    "race": [
+      "Darkin"
+    ],
+    "role": [
+      "Marksman",
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/varus/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/varus/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ionia",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Vayne"
     ],
     "region": [
-      "Runeterra"
+      "Demacia"
     ],
     "related": [
-      "vladimir",
-      "warwick",
-      "sion"
+      "Evelynn",
+      "Shaco",
+      "Fiddlesticks"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Marksman",
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/vayne/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/vayne/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "demacia",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Veigar"
+    ],
+    "region": [
+      "Bandle City"
+    ],
+    "related": [
+      "Mordekaiser",
+      "LeBlanc"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/veigar/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/veigar/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "bandle-city",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Vel'Koz"
+    ],
+    "region": [
+      "The Void"
+    ],
+    "related": [
+      "Kha'Zix",
+      "Cho'Gath",
+      "Kog'Maw",
+      "Rek'Sai"
+    ],
+    "race": [
+      ""
+    ],
+    "role": [
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/velkoz/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/velkoz/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "void",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Vex"
     ],
     "region": [
-      "Runeterra"
+      "Shadow Isles"
     ],
     "related": [
-      "lucian",
-      "senna",
-      "thresh",
-      "viego"
+      "Lucian",
+      "Senna",
+      "Thresh",
+      "Viego"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/vex/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/vex/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "shadow-isles",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Vi"
+    ],
+    "region": [
+      "Piltover"
+    ],
+    "related": [
+      "Caitlyn",
+      "Jinx",
+      "Ekko"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Fighter",
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/vi/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/vi/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "piltover",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Viego"
     ],
     "region": [
-      "Runeterra"
+      "Shadow Isles"
     ],
     "related": [
-      "hecarim",
-      "kalista",
-      "senna",
-      "thresh",
-      "vladimir",
-      "yorick"
+      "Hecarim",
+      "Kalista",
+      "Senna",
+      "Thresh",
+      "Vladimir",
+      "Yorick"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/viego/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/viego/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "shadow-isles",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Viktor"
     ],
     "region": [
-      "Runeterra"
+      "Zaun"
     ],
     "related": [
-      "jayce",
-      "heimerdinger",
-      "blitzcrank"
+      "Jayce",
+      "Heimerdinger",
+      "Blitzcrank"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/viktor/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/viktor/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "zaun",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Vladimir"
     ],
     "region": [
-      "Runeterra"
+      "Noxus"
     ],
     "related": [
-      "swain",
-      "leblanc",
-      "elise",
-      "kayn"
+      "Swain",
+      "LeBlanc",
+      "Elise",
+      "Kayn"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Mage",
+      "Tank"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/vladimir/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/vladimir/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "noxus",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Volibear"
     ],
     "region": [
-      "Runeterra"
+      "Freljord"
     ],
     "related": [
-      "ornn",
-      "anivia",
-      "lissandra"
+      "Ornn",
+      "Anivia",
+      "Lissandra"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Fighter",
+      "Tank"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/volibear/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/volibear/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "freljord",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Warwick"
+    ],
+    "region": [
+      "Zaun"
+    ],
+    "related": [
+      "Camille",
+      "Singed",
+      "Vayne"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Fighter",
+      "Tank"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/warwick/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/warwick/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "zaun",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Wukong"
     ],
     "region": [
-      "Runeterra"
+      "Ionia"
     ],
     "related": [
-      "masteryi",
-      "ahri"
+      "Master Yi",
+      "Ahri"
     ],
     "race": [
-      ""
+      "Vastaya"
     ],
     "role": [
-      ""
-    ]
+      "Fighter",
+      "Tank"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/monkeyking/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/monkeyking/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ionia",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Xayah"
+    ],
+    "region": [
+      "Ionia"
+    ],
+    "related": [
+      "Rakan",
+      "Zed"
+    ],
+    "race": [
+      "Vastaya"
+    ],
+    "role": [
+      "Marksman",
+      "Tank"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/xayah/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/xayah/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ionia",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Xerath"
     ],
     "region": [
-      "Runeterra"
+      "Shurima"
     ],
     "related": [
-      "renekton",
-      "cassiopeia",
-      "nasus",
-      "azir",
-      "sivir",
-      "taliyah",
-      "brand"
+      "Renekton",
+      "Cassiopeia",
+      "Nasus",
+      "Azir",
+      "Sivir",
+      "Taliyah",
+      "Brand"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Mage",
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/xerath/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/xerath/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "shurima",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Xin Zhao"
     ],
     "region": [
-      "Runeterra"
+      "Demacia"
     ],
     "related": [
-      "jarvaniv",
-      "yunara",
-      "sona"
+      "Jarvan IV",
+      "Yunara",
+      "Sona"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Fighter",
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/xinzhao/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/xinzhao/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "demacia",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Yasuo"
+    ],
+    "region": [
+      "Ionia"
+    ],
+    "related": [
+      "Yone",
+      "Taliyah",
+      "Riven"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Fighter",
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/yasuo/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/yasuo/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ionia",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Yone"
     ],
     "region": [
-      "Runeterra"
+      "Ionia"
     ],
     "related": [
-      "yasuo",
-      "lillia"
+      "Yasuo",
+      "Lillia"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Assassin"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/yone/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/yone/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ionia",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Yorick"
     ],
     "region": [
-      "Runeterra"
+      "Shadow Isles"
     ],
     "related": [
-      "hecarim",
-      "kalista",
-      "thresh",
-      "karthus",
-      "maokai",
-      "kindred"
+      "Hecarim",
+      "Kalista",
+      "Thresh",
+      "Karthus",
+      "Maokai",
+      "Kindred"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Fighter",
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/yorick/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/yorick/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "shadow-isles",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Yunara"
     ],
     "region": [
-      "Runeterra"
+      "Ionia"
     ],
     "related": [
-      "xinzhao",
-      "kennen"
+      "Xin Zhao",
+      "Kennen"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Marksman"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/yunara/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/yunara/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ionia",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Yuumi"
     ],
     "region": [
-      "Runeterra"
+      "Bandle City"
     ],
     "related": [
-      "lulu",
-      "tristana",
-      "teemo"
+      "Norra",
+      "Lulu",
+      "Tristana",
+      "Teemo"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Support",
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/yuumi/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/yuumi/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "bandle-city",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
@@ -1868,34 +4631,134 @@
       "Runeterra"
     ],
     "related": [
-      "xinzhao",
-      "yunara",
-      "kayn",
-      "varus"
+      "Xin Zhao",
+      "Yunara",
+      "Kayn",
+      "Varus"
+    ],
+    "race": [
+      "Darkin"
+    ],
+    "role": [
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/zaahen/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/zaahen/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "unaffiliated",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Zac"
+    ],
+    "region": [
+      "Zaun"
+    ],
+    "related": [
+      "Twitch"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Tank",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/zac/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/zac/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "zaun",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Zed"
+    ],
+    "region": [
+      "Ionia"
+    ],
+    "related": [
+      "Shen",
+      "Akali",
+      "Kennen",
+      "Gangplank",
+      "Jhin",
+      "Kayn"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Assassin",
+      "Fighter"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/zed/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/zed/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ionia",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Zeri"
     ],
     "region": [
-      "Runeterra"
+      "Zaun"
     ],
     "related": [
-      "ekko"
+      "Ekko"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Marksman"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/zeri/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/zeri/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "zaun",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Ziggs"
+    ],
+    "region": [
+      "Zaun"
+    ],
+    "related": [
+      "Heimerdinger",
+      "Rumble",
+      "Veigar"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/ziggs/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/ziggs/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "zaun",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
@@ -1905,33 +4768,77 @@
       "Runeterra"
     ],
     "related": [
-      "aatrox",
-      "jax",
-      "velkoz"
+      "Aatrox",
+      "Jax",
+      "Vel'Koz"
     ],
     "race": [
       ""
     ],
     "role": [
-      ""
-    ]
+      "Support",
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/zilean/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/zilean/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "unaffiliated",
+      "related_status": "verified"
+    }
   },
   {
     "champion_name": [
       "Zoe"
     ],
     "region": [
-      "Runeterra"
+      "Targon"
     ],
     "related": [
-      "aurelionsol",
-      "pantheon"
+      "Aurelion Sol",
+      "Pantheon"
     ],
     "race": [
       ""
     ],
     "role": [
+      "Mage"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/zoe/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/zoe/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "mount-targon",
+      "related_status": "verified"
+    }
+  },
+  {
+    "champion_name": [
+      "Zyra"
+    ],
+    "region": [
+      "Ixtal"
+    ],
+    "related": [
+      "Ivern",
+      "Nidalee"
+    ],
+    "race": [
       ""
-    ]
+    ],
+    "role": [
+      "Mage",
+      "Support"
+    ],
+    "_source": {
+      "verified": true,
+      "page": "https://universe.leagueoflegends.com/en_US/champion/zyra/",
+      "api": "https://universe-meeps.leagueoflegends.com/v1/en_us/champions/zyra/index.json",
+      "fetched_at": "2026-09-22T22:02:31+00:00",
+      "region_slug": "ixtal",
+      "related_status": "verified"
+    }
   }
 ]

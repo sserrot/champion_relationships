@@ -1,0 +1,20 @@
+{
+  "Locke": {
+    "file": "locke.png",
+    "source": "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Locke.png",
+    "retrieved_at": "2026-09-23T14:43:19.416885+00:00",
+    "sha256": "f05b0779ef6873f798d42f0bff433d54a7ba761d487ef36dd3de0c32bdf98d28"
+  },
+  "Naafiri": {
+    "file": "naafiri.png",
+    "source": "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Naafiri.png",
+    "retrieved_at": "2026-09-23T14:43:19.664240+00:00",
+    "sha256": "75a82287766d7bc333305390675eb5bd3a0b7522d0a69a46543e7bdc301a4ed7"
+  },
+  "Norra": {
+    "file": "norra.jpg",
+    "source": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe_live/11e3f6bb92001305252d12841d9c763454967118-1920x1080.jpg?accountingTag=LoL",
+    "retrieved_at": "2026-09-23T14:43:20.217420+00:00",
+    "sha256": "5ac8883dd14dc612942546c2c0a93b093bcdfbf00b81394a49dab471fbc7c51c"
+  }
+}

@@ -14,12 +14,22 @@ app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 
 @app.route("/", methods=['GET', 'POST'])
 def index():
-    return render_template('LoLChampRelationships.html')
+    return render_template('network.html')
 
 
 @app.route("/network")
 def network():
     return render_template('network.html')
+
+
+@app.route("/previous")
+def previous():
+    return render_template('network_previous.html')
+
+
+@app.route("/report")
+def report():
+    return render_template('LoLChampRelationships.html')
 
 
 @app.route("/graph_raw.html")
@@ -36,4 +46,4 @@ def champion_image(filename):
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5001, debug=True)
+    app.run(host='127.0.0.1', port=5001, debug=False)

@@ -56,6 +56,16 @@ def entry_by_key(data, canonical_names):
 
 
 def merge_entry(name, base_entry, updated_entry, canonical_names):
+    if updated_entry and updated_entry.get("_source", {}).get("verified"):
+        return {
+            "champion_name": [name],
+            "region": updated_entry["region"],
+            "related": normalize_related(updated_entry["related"], canonical_names),
+            "race": updated_entry["race"],
+            "role": updated_entry["role"],
+            "_source": updated_entry["_source"],
+        }
+
     source = updated_entry or base_entry
     fallback = base_entry or {}
 

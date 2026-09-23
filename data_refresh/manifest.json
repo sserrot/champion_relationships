@@ -1,0 +1,14 @@
+{
+  "fetched_at": "2026-09-22T22:02:31+00:00",
+  "game_version": "16.18.1",
+  "game_roster_count": 173,
+  "universe_only": [
+    "Norra"
+  ],
+  "roster_count": 174,
+  "verified_count": 174,
+  "change_count": 179,
+  "baseline_sha256": "530ff8e1416444477fb1f0a757df0ab9d0fecbb5afa82f087f7ea44954fe0be7",
+  "review_sha256": "8399b09db4f4b38864c89badd9f8e2d6657ff49a051720d889b6b8b181f10b32",
+  "issues": []
+}

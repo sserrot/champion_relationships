@@ -1,6 +1,8 @@
 requests
 beautifulsoup4
 lxml
+Flask>=3,<4
+networkx>=3.2,<4
 
 # Optional: for headless browser fallback
 # playwright

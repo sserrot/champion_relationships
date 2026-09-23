@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Champion Connections — an interactive League of Legends network</title>
+  <meta name="description" content="Explore connections between League of Legends champions, one story at a time.">
+  <link rel="stylesheet" href="__CSS_PATH__">
+  <script defer src="__VENDOR_PATH__"></script>
+  <script defer src="__JS_PATH__"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Champion Connections home"><span class="wordmark-mark">✦</span> Champion Connections</a>
+    <a class="method-link" href="https://github.com/sserrot/champion_relationships" rel="noopener noreferrer">Source <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="top">
+    <section class="intro" aria-labelledby="page-title">
+      <div class="intro-copy">
+        <p class="eyebrow">An interactive map of Runeterra</p>
+        <h1 id="page-title">Every champion has a story. <em>Follow the connections.</em></h1>
+        <p class="lede">Choose a champion. Follow the connections.</p>
+        <p class="snapshot">__SNAPSHOT_LABEL__</p>
+      </div>
+      <div class="intro-stat" aria-label="Dataset summary"><strong>__CHAMPION_COUNT__</strong><span>champions to explore</span><span class="intro-stat-line">__RELATIONSHIP_COUNT__ recorded connections</span></div>
+    </section>
+
+    <section class="explorer" aria-labelledby="explorer-title">
+      <div class="explorer-heading"><div><p class="eyebrow">The explorer</p><h2 id="explorer-title">Where will you start?</h2></div></div>
+      <div class="explorer-grid" id="explorer-grid">
+        <aside class="control-card" aria-label="Explore controls">
+          <form id="champion-form" class="search-form">
+            <label for="champion-search">Find a champion</label>
+            <div class="search-row"><input id="champion-search" name="champion" type="search" list="champion-list" placeholder="Try Garen, Ahri, Jinx…" autocomplete="off"><button type="submit" class="primary-button">Explore</button></div>
+            <datalist id="champion-list"></datalist>
+          </form>
+          <p id="search-message" class="helper" role="status"></p>
+
+          <div class="control-section"><h3>Try a starting point</h3>
+            <button type="button" class="prompt-button" id="prompt-garen"><span><strong>Start with Garen</strong></span><span aria-hidden="true">→</span></button>
+            <button type="button" class="prompt-region" id="prompt-region"><span><strong>Explore one region</strong></span><span aria-hidden="true">↓</span></button>
+            <label class="sr-only" for="region-select">Choose a region</label><select id="region-select"><option value="">Choose a region</option></select>
+            <button type="button" class="prompt-button" id="prompt-bridge"><span><strong>Who connects groups?</strong><small>Find a champion linking network clusters.</small></span><span aria-hidden="true">→</span></button>
+          </div>
+          <div class="control-section"><h3>View</h3><div class="view-buttons"><button type="button" id="view-neighbors" class="view-button is-active">Connections</button><button type="button" id="view-region" class="view-button">Region map</button><button type="button" id="view-all" class="view-button">Full network</button></div></div>
+          <div class="control-section"><form id="hide-form" class="search-form"><label for="hide-search">Hide champions</label><div class="search-row"><input id="hide-search" type="search" list="champion-list" placeholder="Name" autocomplete="off"><button type="submit" class="secondary-button">Hide</button></div></form><p id="hide-message" class="helper" role="status"></p><div id="hidden-list" class="hidden-list" aria-label="Hidden champions"></div><button type="button" id="clear-hidden" class="clear-hidden" hidden>Show all hidden</button></div>
+          <div class="control-section"><label for="relationship-filter">Relationship type</label><select id="relationship-filter"><option value="all">All connections</option><option value="friend">Friend</option><option value="rival">Rival</option><option value="related">Related</option><option value="mixed">Friend + rival</option></select><p class="helper">Related (any link): newer League Universe site. Friend/rival: older League Universe site.</p></div>
+        </aside>
+
+        <div class="graph-card"><div class="graph-topline"><div><h3 id="graph-title">Garen’s connections</h3><p id="graph-summary" aria-live="polite">Preparing the map…</p></div><div class="graph-actions"><button type="button" id="focus-selected" class="text-button" hidden>Connections →</button><button type="button" id="zoom-out" class="zoom-button" aria-label="Zoom out">−</button><button type="button" id="zoom-in" class="zoom-button" aria-label="Zoom in">+</button><button type="button" id="fit-graph" class="text-button" aria-label="Fit visible graph to screen">Fit view ↗</button></div></div><div class="graph-stage"><div id="network" role="img" aria-label="Interactive champion relationship network. Use search or the connection list to explore without the graph."></div><p id="graph-loading" class="graph-loading" role="status">Arranging the network…</p></div><div class="graph-legend" aria-label="Connection key"><span><i class="key friend"></i>Friend</span><span><i class="key rival"></i>Rival</span><span><i class="key related"></i>Related</span><span><i class="key mixed"></i>Friend + rival</span></div></div>
+
+        <aside class="detail-card" aria-labelledby="detail-title"><p class="eyebrow">Selected champion</p><div class="detail-heading"><img id="detail-image" alt="" width="58" height="58"><div><h3 id="detail-title">Garen</h3><p id="detail-meta"></p></div></div><a id="detail-source" class="detail-source" target="_blank" rel="noopener noreferrer">View on League Universe ↗</a><h4>Connections <span id="detail-count"></span></h4><div id="connection-list" class="connection-list"></div></aside>
+      </div>
+    </section>
+
+  </main>
+  <footer>Champion Connections is not endorsed by Riot Games. League of Legends and its champions are trademarks of Riot Games, Inc.</footer>
+  <script id="graph-data" type="application/json">__GRAPH_DATA__</script>
+</body>
+</html>
