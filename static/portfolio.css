@@ -14,3 +14,4 @@
 .zoom-button{width:32px;height:32px;min-width:32px;border:1px solid #54706a;border-radius:7px;background:transparent;color:#e9bc74;font-size:20px;line-height:1}.zoom-button:hover{background:#28403e}
 @media(max-width:760px){.graph-topline{flex-wrap:wrap}.graph-actions{width:100%;justify-content:space-between}}
 @media(max-width:760px){.explorer-grid.is-full .graph-stage{height:520px}}
+.previous-link{display:inline-block;margin-top:13px;color:#e9bc74;font-size:12px;text-decoration:none;border-bottom:1px solid #e9bc7480;padding-bottom:3px}.previous-link:hover{border-color:#e9bc74}

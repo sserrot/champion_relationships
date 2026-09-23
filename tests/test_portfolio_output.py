@@ -23,12 +23,20 @@ class PortfolioOutputTests(unittest.TestCase):
         self.assertEqual(sum(edge["relation"] == "mixed" for edge in graph["edges"]), 5)
         self.assertTrue(all(node["url"].startswith("https://universe.leagueoflegends.com/en_US/champion/") for node in graph["nodes"]))
         self.assertIn('id="detail-source"', page)
+        self.assertIn('href="previous.html">Compare with previous graph', page)
         for node in graph["nodes"]:
             if node["image"]:
                 self.assertTrue((ROOT / "demo" / graph["imagePrefix"] / node["image"]).is_file(), node["id"])
         for asset in ("portfolio.css", "portfolio.js", "vis-network.min.js"):
             self.assertTrue((ROOT / "demo" / "assets" / asset).is_file())
         self.assertNotIn("https://unpkg.com", page)
+
+        previous = (ROOT / "demo" / "previous.html").read_text(encoding="utf-8")
+        self.assertIn('href="index.html">Current graph', previous)
+        self.assertIn('src="assets/vis-network.min.js"', previous)
+        self.assertNotIn("{{ url_for", previous)
+        for filename in set(re.findall(r'assets/img/([^"/]+)', previous)):
+            self.assertTrue((ROOT / "demo" / "assets" / "img" / filename).is_file(), filename)
 
     def test_home_is_explorer_and_report_remains_available(self):
         client = app.test_client()

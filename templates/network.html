@@ -6,7 +6,7 @@
   <meta name="color-scheme" content="dark">
   <title>Champion Connections — an interactive League of Legends network</title>
   <meta name="description" content="Explore connections between League of Legends champions, one story at a time.">
-  <link rel="stylesheet" href="/static/portfolio.css?v=a83b2c810f">
+  <link rel="stylesheet" href="/static/portfolio.css?v=6461ae9736">
   <script defer src="/static/vendor/vis-network.min.js?v=f53f833ddb"></script>
   <script defer src="/static/portfolio.js?v=f3ca63ffc4"></script>
 </head>
@@ -43,7 +43,7 @@
             <label class="sr-only" for="region-select">Choose a region</label><select id="region-select"><option value="">Choose a region</option></select>
             <button type="button" class="prompt-button" id="prompt-bridge"><span><strong>Who connects groups?</strong><small>Find a champion linking network clusters.</small></span><span aria-hidden="true">→</span></button>
           </div>
-          <div class="control-section"><h3>View</h3><div class="view-buttons"><button type="button" id="view-neighbors" class="view-button is-active">Connections</button><button type="button" id="view-region" class="view-button">Region map</button><button type="button" id="view-all" class="view-button">Full network</button></div></div>
+          <div class="control-section"><h3>View</h3><div class="view-buttons"><button type="button" id="view-neighbors" class="view-button is-active">Connections</button><button type="button" id="view-region" class="view-button">Region map</button><button type="button" id="view-all" class="view-button">Full network</button></div><a class="previous-link" href="/previous">Compare with previous graph ↗</a></div>
           <div class="control-section"><form id="hide-form" class="search-form"><label for="hide-search">Hide champions</label><div class="search-row"><input id="hide-search" type="search" list="champion-list" placeholder="Name" autocomplete="off"><button type="submit" class="secondary-button">Hide</button></div></form><p id="hide-message" class="helper" role="status"></p><div id="hidden-list" class="hidden-list" aria-label="Hidden champions"></div><button type="button" id="clear-hidden" class="clear-hidden" hidden>Show all hidden</button></div>
           <div class="control-section"><label for="relationship-filter">Relationship type</label><select id="relationship-filter"><option value="all">All connections</option><option value="friend">Friend</option><option value="rival">Rival</option><option value="related">Related</option><option value="mixed">Friend + rival</option></select><p class="helper">Related (any link): newer League Universe site. Friend/rival: older League Universe site.</p></div>
         </aside>

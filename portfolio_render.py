@@ -61,7 +61,7 @@ def build_portfolio(G, partition, image_filename):
         "__RELATIONSHIP_COUNT__": str(G.number_of_edges()),
     }
 
-    def render(image_prefix, css_path, vendor_path, js_path):
+    def render(image_prefix, css_path, vendor_path, js_path, previous_path):
         page = shell
         payload = dict(graph_data, imagePrefix=image_prefix)
         constants_for_page = dict(constants, **{
@@ -69,6 +69,7 @@ def build_portfolio(G, partition, image_filename):
             "__CSS_PATH__": css_path,
             "__VENDOR_PATH__": vendor_path,
             "__JS_PATH__": js_path,
+            "__PREVIOUS_PATH__": previous_path,
         })
         for marker, value in constants_for_page.items():
             page = page.replace(marker, value)
@@ -83,6 +84,7 @@ def build_portfolio(G, partition, image_filename):
         versioned("/static/portfolio.css", ROOT / "static" / "portfolio.css"),
         versioned("/static/vendor/vis-network.min.js", ROOT / "static" / "vendor" / "vis-network.min.js"),
         versioned("/static/portfolio.js", ROOT / "static" / "portfolio.js"),
+        "/previous",
     )
     (ROOT / "templates" / "network.html").write_text(flask_page, encoding="utf-8")
 
@@ -98,6 +100,13 @@ def build_portfolio(G, partition, image_filename):
         (ROOT / "static" / "vendor" / "vis-network.min.js", assets / "vis-network.min.js"),
     ):
         shutil.copy2(source, destination)
-    static_page = render("assets/img/", "assets/portfolio.css", "assets/vis-network.min.js", "assets/portfolio.js")
+    static_page = render("assets/img/", "assets/portfolio.css", "assets/vis-network.min.js", "assets/portfolio.js", "previous.html")
     (demo / "index.html").write_text(static_page, encoding="utf-8")
+    previous = (ROOT / "templates" / "network_previous.html").read_text(encoding="utf-8")
+    previous = (previous
+                .replace("{{ url_for('static', filename='vendor/vis-network.min.js') }}", "assets/vis-network.min.js")
+                .replace("../R_analysis/img/", "assets/img/")
+                .replace('"/img/', '"assets/img/')
+                .replace('href="/"', 'href="index.html"'))
+    (demo / "previous.html").write_text(previous, encoding="utf-8")
     print(f"Wrote {G.number_of_nodes()} champions and {G.number_of_edges()} connections to templates/network.html and demo/index.html")
